@@ -3,16 +3,17 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:orientation="vertical"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent"
+    android:id="@+id/mainFragment">
 
+	<!--현재 레이아웃에 프래그먼트가 들어갈 영역-->
 	<fragment
 		android:id="@+id/fragment1"
 		android:name="com.imaginarywings.capstonedesign.remo.navermap.Fragment1"
 		android:layout_width="match_parent"
-		android:layout_height="300dp"
+		android:layout_height="match_parent"
 		android:layout_alignParentStart="true"
 		android:layout_alignParentTop="true"
-		android:layout_weight="2.20"
 		android:layout_alignParentBottom="true" />
 
 	<!-- 하위 플로팅 버튼 -->
@@ -66,7 +67,7 @@
 		android:layout_marginBottom="10dp"
 		android:clickable="true"
 		android:visibility="invisible"
-		app:backgroundTint="?attr/colorButtonNormal"
+		app:backgroundTint="@android:color/holo_orange_light"
 		app:elevation="0dp"
 		app:fabSize="normal"
 		app:srcCompat="@android:drawable/ic_menu_mylocation" />

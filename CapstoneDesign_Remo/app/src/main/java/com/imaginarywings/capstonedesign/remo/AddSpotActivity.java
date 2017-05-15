@@ -1,26 +1,29 @@
 package com.imaginarywings.capstonedesign.remo;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.imaginarywings.capstonedesign.remo.navermap.Fragment1;
+import com.imaginarywings.capstonedesign.remo.navermap.FragmentMapActivity;
+import com.imaginarywings.capstonedesign.remo.navermap.NMapPOIflagType;
+import com.nhn.android.maps.maplib.NGeoPoint;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-
-import butterknife.ButterKnife;
 
 public class AddSpotActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -33,6 +36,10 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
     private int id_view;
     private String absoultePath;
 
+    private Fragment1 photospot_map;
+
+    private TextView text_SpotAddress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,28 +48,30 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
         iv_spot = (ImageView)this.findViewById(R.id.ImgView_PhotoSpot);
 
         ImageButton btnAddSpot = (ImageButton)this.findViewById(R.id.Btn_AddSpot);
-
         btnAddSpot.setOnClickListener(this);
+
+        text_SpotAddress = (TextView)this.findViewById(R.id.id_SpotAddress);
     }
 
-    private void TakePhotoAction() {
 
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        //임시로 사용할 파일의 경로 생성
-        String url = "tmp_" + String.valueOf(System.currentTimeMillis()) + "jpg";
-        mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
-        startActivityForResult(intent, PICK_FROM_CAMERA);
+        //FragmentMapActivity 의 함수 호출 방법
+        //포토스팟 위도 경도 삽입
+        NGeoPoint Point = ((FragmentMapActivity)FragmentMapActivity.mContext).getAddress();
+
+        //위도
+        String latitude = String.valueOf(Point.getLatitude());
+
+        //경도
+        String longitude = String.valueOf(Point.getLongitude());
+
+        text_SpotAddress.setText(latitude + " " + longitude );
     }
 
-    public void TakeAlbumAction()
-    {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
-        startActivityForResult(intent, PICK_FROM_ALBUM);
-    }
 
     @Override
     protected void onDestroy() {
@@ -98,7 +107,7 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
 
             //버튼 옵션에 따라서 바뀜.. Positive, Title, Neutral, Negative 등등
             new AlertDialog.Builder(this).setTitle("업로드할 이미지 선택")
-                    .setPositiveButton("카메라 촬영", cameralistener)
+                    //.setPositiveButton("카메라 촬영", cameralistener)      //에러 발생
                     .setNeutralButton("앨범 선택", albumlistener)
                     .setNegativeButton("취소", cancelListener)
                     .show();
@@ -179,6 +188,25 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
                 }
             }
         }
+    }
+
+    private void TakePhotoAction() {
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        //임시로 사용할 파일의 경로 생성
+        String url = "tmp_" + String.valueOf(System.currentTimeMillis()) + "jpg";
+        mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
+
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
+        startActivityForResult(intent, PICK_FROM_CAMERA);
+    }
+
+    public void TakeAlbumAction()
+    {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+        startActivityForResult(intent, PICK_FROM_ALBUM);
     }
 
     /**

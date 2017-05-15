@@ -16,7 +16,9 @@
 package com.imaginarywings.capstonedesign.remo.navermap;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.Fragment;
@@ -51,16 +53,14 @@ import butterknife.ButterKnife;
 import io.nlopez.smartlocation.SmartLocation;
 
 /**
- * NMapFragment 를 상속받는 프래그먼트 클래스
+ * NMapFragment extends Fragment
  * 지도를 프래그먼트로 띄워서 UI 수정을 유동적으로 할 수 있다.
- * 이제 포토스팟 액티비티 말고 여기서 작업해야함!
- *
- * 프래그먼트1과 2를 프래그먼트맵액티비티에 모아서 출력하는 형태
+ * 포토스팟 액티비티x, Fragment1의 클래스 이름을 나중에 바꿔줘야함.(현재 혼동옴)
  */
 
 public class Fragment1 extends NMapFragment {
 
-	//클라이언트 아이디(API키)
+	//네이버맵 클라이언트 아이디(API키)
 	private final String CLIENT_ID = "xQ50GyWn_EU3eQE4A1sL";
 
 	//포토스팟 다이얼로그 창 데이터 해시 테이블?
@@ -86,6 +86,13 @@ public class Fragment1 extends NMapFragment {
 
 	//오버레이의 리소스를 제공하기 위한 객체
 	private NMapViewerResourceProvider mMapViewerResourceProvider;
+
+	boolean CHECK_GPS = false;
+
+	public Fragment1()
+	{
+
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -169,7 +176,7 @@ public class Fragment1 extends NMapFragment {
 	};
 
 	//단말기의 현재 위치 상태 변경 시 호출되는 콜백 인터페이스.
-	private NMapLocationManager.OnLocationChangeListener mLocationChangeListener = new NMapLocationManager.OnLocationChangeListener() {
+	public NMapLocationManager.OnLocationChangeListener mLocationChangeListener = new NMapLocationManager.OnLocationChangeListener() {
 
 		//현재 위치 변경시 호출.
 		@Override
@@ -198,7 +205,7 @@ public class Fragment1 extends NMapFragment {
 	};
 
 	//포토스팟 마커 생성
-	private void createSpotMarker() {
+	public void createSpotMarker() {
 		int markerId = NMapPOIflagType.PIN;
 
 		//포토스팟을 생성
@@ -256,8 +263,9 @@ public class Fragment1 extends NMapFragment {
 
 
 	//시작했을때 나의 현재 위치 보여주록 함.
-	private void startMyLocation()
+	public void startMyLocation()
 	{
+		//Log.d(TAG, "startMyLocation: 찍혀라");
 		if(mMyLocationOverlay != null)
 		{
 			if(!mOverlayManager.hasOverlay(mMyLocationOverlay))
@@ -269,14 +277,9 @@ public class Fragment1 extends NMapFragment {
 		boolean isMyLocationEnabled = mMapLocationManager.enableMyLocation(true);
 
 		if (!isMyLocationEnabled)
-		{
 			Toast.makeText(getActivity(), "현재 위치를 가져올 수 없습니다. GPS 상태를 확인해주세요!", Toast.LENGTH_SHORT).show();
-			createSpotMarker();
-		}
-		else
-		{
-			createSpotMarker();
-		}
+
+        createSpotMarker();
 	}
 
 	//퍼미션 리스터 인터페이스 오버라이드
@@ -285,6 +288,15 @@ public class Fragment1 extends NMapFragment {
 		public void onPermissionGranted() {
 			checkLocationEnabled();
 			startMyLocation();
+
+			/*
+			//GPS가 켜져있는지 아닌지 확인
+			final LocationManager manager = (LocationManager) getContext().getSystemService(getContext().LOCATION_SERVICE);
+			CHECK_GPS = manager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+			if(CHECK_GPS)
+				startMyLocation();
+			*/
 		}
 
 		@Override
@@ -302,14 +314,31 @@ public class Fragment1 extends NMapFragment {
 				.check();
 	}
 
-	//GPS 기능 확인
+	//GPS 기능 확인 -> 설정창으로 이동
 	private void checkLocationEnabled() {
 		if (!SmartLocation.with(getActivity()).location().state().isGpsAvailable()) {
 			Toast.makeText(getActivity(), "GPS기능을 활성화 해주시기 바랍니다.", Toast.LENGTH_SHORT).show();
 			Intent goToSettings = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 			startActivityForResult(goToSettings, REQUEST_LOCATION_ENABLE);
-		} else {
+
+		}
+		else {
 			//mButtonLayout.setVisibility(View.VISIBLE);
 		}
+	}
+
+	//현재 위치 정보 반환
+	public NGeoPoint checkMyLocationInfo() {
+		NGeoPoint location = mMapLocationManager.getMyLocation();
+		return location;
+	}
+
+
+	//맵 스케일 변경(외부 호출)
+	public void setMapScale()
+	{
+		//자세한 확대 (수치는 적절히 조정하도록)
+		//다른 함수를 찾아보도록!!!!!!!!!!!!!
+		mMapView.setScalingFactor(2.0f);
 	}
 }
