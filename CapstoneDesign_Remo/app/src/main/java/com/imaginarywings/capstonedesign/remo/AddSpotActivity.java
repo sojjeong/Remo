@@ -63,13 +63,18 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
         //포토스팟 위도 경도 삽입
         NGeoPoint Point = ((FragmentMapActivity)FragmentMapActivity.mContext).getAddress();
 
+        /*
         //위도
         String latitude = String.valueOf(Point.getLatitude());
 
         //경도
         String longitude = String.valueOf(Point.getLongitude());
+        */
 
-        text_SpotAddress.setText(latitude + " " + longitude );
+        String Address =
+                ((FragmentMapActivity)FragmentMapActivity.mContext).CovertAddress(this, Point.getLatitude(), Point.getLongitude());
+
+        text_SpotAddress.setText(Address);
     }
 
 

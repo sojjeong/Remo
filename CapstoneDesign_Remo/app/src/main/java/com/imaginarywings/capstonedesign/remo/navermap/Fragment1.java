@@ -18,6 +18,7 @@ package com.imaginarywings.capstonedesign.remo.navermap;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -25,6 +26,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -35,12 +37,15 @@ import com.imaginarywings.capstonedesign.remo.Consts;
 import com.imaginarywings.capstonedesign.remo.R;
 import com.imaginarywings.capstonedesign.remo.SpotDetailDialog;
 import com.imaginarywings.capstonedesign.remo.model.PhotoSpotModel;
+import com.nhn.android.maps.NMapActivity;
 import com.nhn.android.maps.NMapCompassManager;
+import com.nhn.android.maps.NMapContext;
 import com.nhn.android.maps.NMapController;
 import com.nhn.android.maps.NMapLocationManager;
 import com.nhn.android.maps.NMapView;
 import com.nhn.android.maps.maplib.NGeoPoint;
 import com.nhn.android.maps.nmapmodel.NMapError;
+import com.nhn.android.maps.nmapmodel.NMapPlacemark;
 import com.nhn.android.maps.overlay.NMapPOIdata;
 import com.nhn.android.maps.overlay.NMapPOIitem;
 import com.nhn.android.mapviewer.overlay.NMapMyLocationOverlay;
@@ -48,6 +53,7 @@ import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
 import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import butterknife.ButterKnife;
 import io.nlopez.smartlocation.SmartLocation;
@@ -87,7 +93,9 @@ public class Fragment1 extends NMapFragment {
 	//오버레이의 리소스를 제공하기 위한 객체
 	private NMapViewerResourceProvider mMapViewerResourceProvider;
 
-	boolean CHECK_GPS = false;
+	private NMapContext mMapContext;
+
+	private String LocationAddress;
 
 	public Fragment1()
 	{
@@ -95,18 +103,31 @@ public class Fragment1 extends NMapFragment {
 	}
 
 	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		mMapContext = new NMapContext(super.getActivity());
+		mMapContext.onCreate();
+	}
+
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment1, container, false);
-		mMapView = (NMapView)view.findViewById(R.id.mapView);
 		return view;
 	}
+
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
 		ButterKnife.bind(getActivity());
+
+		mMapView = (NMapView)getView().findViewById(R.id.mapView);
+		mMapView.setClientId(CLIENT_ID);
+
+		mMapContext.setupMapView(mMapView);
 
 		checkGPSPermissions();
 
@@ -116,31 +137,75 @@ public class Fragment1 extends NMapFragment {
 		//자세한 확대 (수치는 적절히 조정하도록)
 		mMapView.setScalingFactor(2.0f);
 
+		//줌인아웃 버튼
+		mMapView.setBuiltInZoomControls(true, null);
+
+		//화면 터치 옵션 활성화
 		mMapView.setClickable(true);
+
 		mMapView.setEnabled(true);
 		mMapView.setFocusable(true);
 		mMapView.setFocusableInTouchMode(true);
 		mMapView.requestFocus();
-		mMapView.setClientId(CLIENT_ID);
 
 		mMapViewerResourceProvider = new NMapViewerResourceProvider(getActivity());
 		mOverlayManager = new NMapOverlayManager(getActivity(), mMapView, mMapViewerResourceProvider);
 
+		//NMapView를 생성하면서 자동으로 컨트롤러도 생성되므로 NMapView로부터 얻어온다.
 		mMapController = mMapView.getMapController();
 
 		//현재위치 매니저
 		mMapLocationManager = new NMapLocationManager(getActivity());
 		mMapLocationManager.setOnLocationChangeListener(mLocationChangeListener);
 
-		// compass manager
+		//compass manager
 		mMapCompassManager = new NMapCompassManager(getActivity());
 
-		// create my location overlay
+		//create my location overlay
 		mMyLocationOverlay = mOverlayManager.createMyLocationOverlay(mMapLocationManager, mMapCompassManager);
 
+		// 데이터 제공 리스너 제대로 동작하는지 확인해야함
+		mMapContext.setMapDataProviderListener(onDataProviderListener);
 	}
 
-	/* 맵 상태변화 리스너 */
+	@Override
+	public void onStart() {
+		super.onStart();
+		mMapContext.onStart();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		mMapContext.onResume();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		mMapContext.onPause();
+	}
+
+	@Override
+	public void onDestroyView() {
+		mMapContext.onDestroy();
+		super.onDestroyView();
+	}
+
+	@Override
+	public void onDestroy() {
+		if(mMapLocationManager.isMyLocationEnabled())
+		{
+			mMapLocationManager.disableMyLocation();
+			mMapLocationManager.setOnLocationChangeListener(null);
+		}
+
+		mMapView.setOnMapStateChangeListener((NMapView.OnMapStateChangeListener) null);
+
+		super.onDestroy();
+	}
+
+	// 맵 상태변화 리스너
 	private NMapView.OnMapStateChangeListener mStateChangeListener = new NMapView.OnMapStateChangeListener() {
 		@Override
 		public void onMapInitHandler(NMapView mapView, NMapError errorInfo) {
@@ -175,8 +240,43 @@ public class Fragment1 extends NMapFragment {
 		}
 	};
 
+
+
+	//지로 라이브러리에서 제공하는 서버 API 호출 시 응답에 대한 콜백 인터페이스
+	public NMapActivity.OnDataProviderListener onDataProviderListener =
+			new NMapActivity.OnDataProviderListener()
+			{
+				@Override	//좌표를 주소로 변환하는 콜백 인터페이스
+				public void onReverseGeocoderResponse(NMapPlacemark nMapPlacemark, NMapError nMapError) {
+
+					if (false) {
+						Log.i("My Log", "onReverseGeocoderResponse: placeMark="
+								+ ((nMapPlacemark != null) ? nMapPlacemark.toString() : null));
+					}
+
+					if (nMapError != null) {
+						Log.e("My Log", "Failed to findPlacemarkAtLocation: error=" + nMapError.toString());
+
+						Toast.makeText(getActivity(), nMapError.toString(), Toast.LENGTH_LONG).show();
+						return;
+					}
+
+					/*
+					if (mFloatingPOIitem != null && mFloatingPOIdataOverlay != null) {
+						mFloatingPOIdataOverlay.deselectFocusedPOIitem();
+
+						if (placeMark != null) {
+							mFloatingPOIitem.setTitle(placeMark.toString());
+						}
+						mFloatingPOIdataOverlay.selectPOIitemBy(mFloatingPOIitem.getId(), false);
+					*/
+				}
+			};
+
+
 	//단말기의 현재 위치 상태 변경 시 호출되는 콜백 인터페이스.
-	public NMapLocationManager.OnLocationChangeListener mLocationChangeListener = new NMapLocationManager.OnLocationChangeListener() {
+	public NMapLocationManager.OnLocationChangeListener mLocationChangeListener =
+			new NMapLocationManager.OnLocationChangeListener() {
 
 		//현재 위치 변경시 호출.
 		@Override
@@ -188,6 +288,14 @@ public class Fragment1 extends NMapFragment {
 				//myLocation 객체에 변경된 좌표를 전달
 				mMapController.animateTo(myLocation);
 			}
+
+			//위치 로그 확인
+			Log.d("myLog", "my Location latitude " + myLocation.getLatitude());
+			Log.d("myLog", "my Location Longitude " + myLocation.getLongitude());
+
+
+			//위도 경도를 주소로 변환
+			mMapContext.findPlacemarkAtLocation(myLocation.getLongitude(), myLocation.getLatitude());
 
 			//현재 위치를 계속 탐색하려면 true를 반환
 			return true;
@@ -333,12 +441,9 @@ public class Fragment1 extends NMapFragment {
 		return location;
 	}
 
-
-	//맵 스케일 변경(외부 호출)
-	public void setMapScale()
-	{
-		//자세한 확대 (수치는 적절히 조정하도록)
-		//다른 함수를 찾아보도록!!!!!!!!!!!!!
-		mMapView.setScalingFactor(2.0f);
+	//현재 위치 정보를 주소로 변환
+	public String checkMyLocationAddress() {
+		return LocationAddress;
 	}
+
 }

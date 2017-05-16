@@ -18,9 +18,13 @@ package com.imaginarywings.capstonedesign.remo.navermap;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -29,6 +33,10 @@ import android.widget.Toast;
 import com.imaginarywings.capstonedesign.remo.AddSpotActivity;
 import com.imaginarywings.capstonedesign.remo.R;
 import com.nhn.android.maps.maplib.NGeoPoint;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * FragmentActivity extends Activity(최상위)
@@ -55,6 +63,15 @@ public class FragmentMapActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.framents);
+
+        //------------------------------------------------------------
+        //2017.05.17. 00:12 테스트 - 동작 완료
+        Fragment1 fragment1 = new Fragment1();
+        fragment1.setArguments(new Bundle());
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.fragment1, fragment1);
+        //------------------------------------------------------------
 
         FabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         FabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
@@ -151,18 +168,52 @@ public class FragmentMapActivity extends FragmentActivity {
                 {
                     Toast.makeText(FragmentMapActivity.this, "현재 위치", Toast.LENGTH_SHORT).show();
                     PhotospotMap.startMyLocation();
-                    PhotospotMap.setMapScale();
+
+                    //축척 재 설정 해줘야함 - 함수 찾아보기
 
                     NGeoPoint address = PhotospotMap.checkMyLocationInfo();
 
                     longitude = address.getLongitude();
                     latitude = address.getLatitude();
 
+                    String Address = CovertAddress(mContext, latitude, longitude);
+                    Toast.makeText(getApplicationContext(), Address, Toast.LENGTH_SHORT).show();
+
                     break;
                 }
             }
         }
     };
+
+    //위도, 경도를 주소로 변환하는 함수 - Geocorder 이용
+    public static String CovertAddress(Context mContext, double latitude, double longitude)
+    {
+        String nowAddress = "";
+        Geocoder geocoder = new Geocoder(mContext, Locale.KOREA);
+
+        List<Address> addressList = null;
+        try{
+            if (geocoder != null)
+            {
+                addressList = geocoder.getFromLocation(latitude, longitude, 1);
+
+                if(addressList != null && addressList.size() > 0)
+                {
+
+                    String currentLocationAddress = addressList.get(0).getAddressLine(0).toString();
+                    nowAddress = currentLocationAddress;
+                }
+            }
+        }
+        catch( IOException e )
+        {
+            Toast.makeText(mContext, "주소를 가져올 수 없습니다.", Toast.LENGTH_SHORT).show();
+
+            e.printStackTrace();
+        }
+
+        return nowAddress;
+    }
 
     //위도 경도 반환 함수
     public NGeoPoint getAddress()
