@@ -78,24 +78,22 @@ public class Fragment1 extends NMapFragment {
 	private final String TAG = getClass().getSimpleName();
 
 	//네이버 맵
-	private NMapView mMapView;
+	public NMapView mMapView;
 
 	//맵 컨트롤러
-	private NMapController mMapController;
+	public NMapController mMapController;
 
 	//지도 위에 표시되는 오버레이 객체를 관리
-	private NMapOverlayManager mOverlayManager;
+	public NMapOverlayManager mOverlayManager;
 
-	private NMapLocationManager mMapLocationManager;
-	private NMapMyLocationOverlay mMyLocationOverlay;       //현재 위치를 표시하기 위한 오버레이 객체
-	private NMapCompassManager mMapCompassManager;          //나침반 매니져
+	public NMapLocationManager mMapLocationManager;
+	public NMapMyLocationOverlay mMyLocationOverlay;       //현재 위치를 표시하기 위한 오버레이 객체
+	public NMapCompassManager mMapCompassManager;          //나침반 매니져
 
 	//오버레이의 리소스를 제공하기 위한 객체
-	private NMapViewerResourceProvider mMapViewerResourceProvider;
+	public NMapViewerResourceProvider mMapViewerResourceProvider;
 
-	private NMapContext mMapContext;
-
-	private String LocationAddress;
+	public NMapContext mMapContext;
 
 	public Fragment1()
 	{
@@ -139,6 +137,9 @@ public class Fragment1 extends NMapFragment {
 
 		//줌인아웃 버튼
 		mMapView.setBuiltInZoomControls(true, null);
+
+		//네이버 로고 위치 변경 왼쪽 상단을 기준으로 x축이 오른쪽으로 갈 수록 양수 , y축이 아래로 갈수록 양수
+		mMapView.setLogoImageOffset(35, 170);
 
 		//화면 터치 옵션 활성화
 		mMapView.setClickable(true);
@@ -207,6 +208,8 @@ public class Fragment1 extends NMapFragment {
 
 	// 맵 상태변화 리스너
 	private NMapView.OnMapStateChangeListener mStateChangeListener = new NMapView.OnMapStateChangeListener() {
+
+		//지도가 초기화 된 후 호출된다.
 		@Override
 		public void onMapInitHandler(NMapView mapView, NMapError errorInfo) {
 			if (errorInfo == null) {
@@ -219,6 +222,7 @@ public class Fragment1 extends NMapFragment {
 			}
 		}
 
+		//지도 중심 변경 시 호출되며 변경된 중심 좌표가 파라미터로 전달된다.
 		@Override
 		public void onMapCenterChange(NMapView mapView, NGeoPoint center) {
 
@@ -229,20 +233,20 @@ public class Fragment1 extends NMapFragment {
 
 		}
 
+		//지도 레벨 변경 시 호출되며 변경된 지도 레벨이 파라미터로 전달된다.
 		@Override
 		public void onZoomLevelChange(NMapView mapView, int level) {
 
 		}
 
+		//지도 애니메이션 상태 변경 시 호출된다.
 		@Override
 		public void onAnimationStateChange(NMapView mapView, int animType, int animState) {
 
 		}
 	};
 
-
-
-	//지로 라이브러리에서 제공하는 서버 API 호출 시 응답에 대한 콜백 인터페이스
+	//지도 라이브러리에서 제공하는 서버 API 호출 시 응답에 대한 콜백 인터페이스
 	public NMapActivity.OnDataProviderListener onDataProviderListener =
 			new NMapActivity.OnDataProviderListener()
 			{
@@ -293,7 +297,6 @@ public class Fragment1 extends NMapFragment {
 			Log.d("myLog", "my Location latitude " + myLocation.getLatitude());
 			Log.d("myLog", "my Location Longitude " + myLocation.getLongitude());
 
-
 			//위도 경도를 주소로 변환
 			mMapContext.findPlacemarkAtLocation(myLocation.getLongitude(), myLocation.getLatitude());
 
@@ -309,14 +312,18 @@ public class Fragment1 extends NMapFragment {
 		@Override
 		public void onLocationUnavailableArea(NMapLocationManager locationManager, NGeoPoint myLocation) {
 			Log.e(TAG, "onLocationUnavailableArea: " + myLocation.toString());
+
+			stopMyLocation();
 		}
 	};
+
+
 
 	//포토스팟 마커 생성
 	public void createSpotMarker() {
 		int markerId = NMapPOIflagType.PIN;
 
-		//포토스팟을 생성
+		//포토스팟을 생성(id, type, android id, suject, address, 이미지경로, latitude, longitude)
 		PhotoSpotModel model1 = new PhotoSpotModel(1, "MAIN", "aid", "main1", "주소1", Consts.IMAGE_URL, 35.852548, 127.100824);
 		PhotoSpotModel model2 = new PhotoSpotModel(2, "MAIN", "aid", "main2", "주소2", Consts.IMAGE_URL, 35.852037, 127.101738);
 		PhotoSpotModel model3 = new PhotoSpotModel(3, "MAIN", "aid", "main3", "주소3", Consts.IMAGE_URL, 35.847722, 127.123735);
@@ -368,12 +375,9 @@ public class Fragment1 extends NMapFragment {
 		mOverlayManager.addOverlay(poiDataOverlay);
 	}
 
-
-
 	//시작했을때 나의 현재 위치 보여주록 함.
 	public void startMyLocation()
 	{
-		//Log.d(TAG, "startMyLocation: 찍혀라");
 		if(mMyLocationOverlay != null)
 		{
 			if(!mOverlayManager.hasOverlay(mMyLocationOverlay))
@@ -385,9 +389,26 @@ public class Fragment1 extends NMapFragment {
 		boolean isMyLocationEnabled = mMapLocationManager.enableMyLocation(true);
 
 		if (!isMyLocationEnabled)
+		{
 			Toast.makeText(getActivity(), "현재 위치를 가져올 수 없습니다. GPS 상태를 확인해주세요!", Toast.LENGTH_SHORT).show();
+			stopMyLocation();
+		}
 
         createSpotMarker();
+	}
+
+	private void stopMyLocation() {
+		if (mMyLocationOverlay != null) {
+			mMapLocationManager.disableMyLocation();
+
+			if (mMapView.isAutoRotateEnabled()) {
+				mMyLocationOverlay.setCompassHeadingVisible(false);
+
+				mMapCompassManager.disableCompass();
+
+				mMapView.setAutoRotateEnabled(false, false);
+			}
+		}
 	}
 
 	//퍼미션 리스터 인터페이스 오버라이드
@@ -396,15 +417,6 @@ public class Fragment1 extends NMapFragment {
 		public void onPermissionGranted() {
 			checkLocationEnabled();
 			startMyLocation();
-
-			/*
-			//GPS가 켜져있는지 아닌지 확인
-			final LocationManager manager = (LocationManager) getContext().getSystemService(getContext().LOCATION_SERVICE);
-			CHECK_GPS = manager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-
-			if(CHECK_GPS)
-				startMyLocation();
-			*/
 		}
 
 		@Override
@@ -417,7 +429,7 @@ public class Fragment1 extends NMapFragment {
 	private void checkGPSPermissions() {
 		new TedPermission(getActivity())
 				.setPermissionListener(permissionlistener)
-				.setDeniedMessage("권한요청을 거절하시면 이 서비스를 이용할 수 없습니다.\n\n 환경설정에서 권한요청을 허용해 주십시오.")
+				.setDeniedMessage("요청을 거절하면 해당 서비스를 이용할 수 없습니다.\n\n 환경설정에서 권한요청을 허용해 주십시오.")
 				.setPermissions(Manifest.permission.ACCESS_FINE_LOCATION)
 				.check();
 	}
@@ -431,7 +443,6 @@ public class Fragment1 extends NMapFragment {
 
 		}
 		else {
-			//mButtonLayout.setVisibility(View.VISIBLE);
 		}
 	}
 
@@ -439,11 +450,6 @@ public class Fragment1 extends NMapFragment {
 	public NGeoPoint checkMyLocationInfo() {
 		NGeoPoint location = mMapLocationManager.getMyLocation();
 		return location;
-	}
-
-	//현재 위치 정보를 주소로 변환
-	public String checkMyLocationAddress() {
-		return LocationAddress;
 	}
 
 }

@@ -13,10 +13,24 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:layout_alignParentStart="true"
-		android:layout_alignParentTop="true"
-		android:layout_alignParentBottom="true" />
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentTop="true" />
 
-	<!-- 하위 플로팅 버튼 -->
+    <!-- 대표 플로팅 버튼 -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="11dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+
 	<android.support.design.widget.FloatingActionButton
 		android:id="@+id/fab_myspot"
 		android:layout_width="wrap_content"
@@ -43,19 +57,6 @@
 		app:fabSize="normal"
 		app:srcCompat="@android:drawable/ic_menu_camera" />
 
-	<!-- 대표 플로팅 버튼 -->
-	<android.support.design.widget.FloatingActionButton
-		android:id="@+id/fab_main"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_alignParentEnd="true"
-		android:layout_marginBottom="8dp"
-		android:layout_marginEnd="11dp"
-		android:clickable="true"
-		app:backgroundTint="@color/colorPrimary"
-		app:fabSize="normal"
-		app:srcCompat="@android:drawable/ic_input_add" />
 
 	<android.support.design.widget.FloatingActionButton
 		android:id="@+id/fab_mylocation"
@@ -71,5 +72,25 @@
 		app:elevation="0dp"
 		app:fabSize="normal"
 		app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+	<SearchView
+        android:id="@+id/id_SpotSearch"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:background="@android:drawable/dialog_holo_light_frame"
+		android:iconifiedByDefault="false"
+		android:inputType="text"
+		android:clickable="true"
+		android:layout_alignParentTop="true"
+		android:layout_toStartOf="@+id/btnSearch">
+
+	</SearchView>
+
+	<Button
+		android:id="@+id/btnSearch"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="검색"
+		android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

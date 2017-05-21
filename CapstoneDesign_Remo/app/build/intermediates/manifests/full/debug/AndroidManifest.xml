@@ -74,10 +74,14 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.imaginarywings.capstonedesign.remo.navermap.FragmentMapActivity"
-            android:label="PhotospotFragment" />
+            android:label="PhotospotFragment" >
+        </activity>
         <activity
             android:name="com.imaginarywings.capstonedesign.remo.AddSpotActivity"
             android:label="AddSpotActivity" />
+        <activity
+            android:name="com.imaginarywings.capstonedesign.remo.LocalSearchActivity"
+            android:label="LocalSearchActivity" />
         <activity
             android:name="com.gun0912.tedpermission.TedPermissionActivity"
             android:theme="@style/Theme.Transparent" />

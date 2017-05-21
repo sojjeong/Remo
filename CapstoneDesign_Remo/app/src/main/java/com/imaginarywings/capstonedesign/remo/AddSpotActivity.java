@@ -72,7 +72,7 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
         */
 
         String Address =
-                ((FragmentMapActivity)FragmentMapActivity.mContext).CovertAddress(this, Point.getLatitude(), Point.getLongitude());
+                ((FragmentMapActivity)FragmentMapActivity.mContext).ConvertAddress(this, Point.getLatitude(), Point.getLongitude());
 
         text_SpotAddress.setText(Address);
     }
