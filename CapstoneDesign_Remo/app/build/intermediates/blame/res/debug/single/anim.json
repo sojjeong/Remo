@@ -4,20 +4,16 @@
         "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
         "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
-    },
-    {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
@@ -28,28 +24,24 @@
         "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\498069b19eac65f1c32c03847f407d46047995e7\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
         "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_fab_out.xml"
-    },
-    {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\rotate_clockwise.xml",
+        "source": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\rotate_clockwise.xml"
     },
     {
         "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_open.xml",
@@ -60,23 +52,111 @@
         "source": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\rotate_anticlockwise.xml"
     },
     {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_fab_in.xml"
-    },
-    {
         "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
         "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\rotate_clockwise.xml",
-        "source": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\rotate_clockwise.xml"
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\rotate_anticlockwise.xml",
+        "source": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\rotate_anticlockwise.xml"
     },
     {
         "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_close.xml",
         "source": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\fab_close.xml"
     },
     {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\498069b19eac65f1c32c03847f407d46047995e7\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
         "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
         "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\498069b19eac65f1c32c03847f407d46047995e7\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\498069b19eac65f1c32c03847f407d46047995e7\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_open.xml",
+        "source": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\fab_open.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\498069b19eac65f1c32c03847f407d46047995e7\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_close.xml",
+        "source": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\fab_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\tip90\\.android\\build-cache\\7e9186953f1f16f80036b5754590707898cd6f19\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\498069b19eac65f1c32c03847f407d46047995e7\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\rotate_clockwise.xml",
+        "source": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\anim\\rotate_clockwise.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\anim\\abc_popup_enter.xml"
     }
 ]

@@ -77,7 +77,7 @@
             android:label="PhotospotFragment" >
         </activity>
         <activity
-            android:name="com.imaginarywings.capstonedesign.remo.AddSpotActivity"
+            android:name="com.imaginarywings.capstonedesign.remo.navermap.AddSpotActivity"
             android:label="AddSpotActivity" />
         <activity
             android:name="com.imaginarywings.capstonedesign.remo.LocalSearchActivity"

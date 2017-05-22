@@ -21,7 +21,6 @@ import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -33,7 +32,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.imaginarywings.capstonedesign.remo.AddSpotActivity;
 import com.imaginarywings.capstonedesign.remo.R;
 import com.nhn.android.maps.maplib.NGeoPoint;
 
@@ -139,7 +137,7 @@ public class FragmentMapActivity extends FragmentActivity {
         finish();
     }
 
-    @OnClick(R.id.btnSearch)
+    @OnClick(R.id.btn_MapSearch)
     public void btnSearchClick(){
 
         mSearchView.clearFocus();

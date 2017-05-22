@@ -3,4 +3,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--현재 레이아웃에 프래그먼트가 들어갈 영역-->
+    <fragment
+        android:id="@+id/fragment_add_spot"
+        android:name="com.imaginarywings.capstonedesign.remo.navermap.Fragment1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true" />
+
 </LinearLayout>

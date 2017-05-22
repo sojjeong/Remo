@@ -1,4 +1,4 @@
-package com.imaginarywings.capstonedesign.remo;
+package com.imaginarywings.capstonedesign.remo.navermap;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,10 +12,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.imaginarywings.capstonedesign.remo.R;
 import com.imaginarywings.capstonedesign.remo.navermap.Fragment1;
 import com.imaginarywings.capstonedesign.remo.navermap.FragmentMapActivity;
 import com.imaginarywings.capstonedesign.remo.navermap.NMapPOIflagType;
@@ -24,6 +26,9 @@ import com.nhn.android.maps.maplib.NGeoPoint;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class AddSpotActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -36,24 +41,25 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
     private int id_view;
     private String absoultePath;
 
-    private Fragment1 photospot_map;
-
     private TextView text_SpotAddress;
+
+    @BindView(R.id.btn_AddSpot_Search) Button btnSearch;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_spot);
 
+        ButterKnife.bind(this);
+
         iv_spot = (ImageView)this.findViewById(R.id.ImgView_PhotoSpot);
 
-        ImageButton btnAddSpot = (ImageButton)this.findViewById(R.id.Btn_AddSpot);
+        ImageButton btnAddSpot = (ImageButton)this.findViewById(R.id.Btn_AddSpot_Image);
         btnAddSpot.setOnClickListener(this);
 
         text_SpotAddress = (TextView)this.findViewById(R.id.id_SpotAddress);
     }
-
-
 
     @Override
     protected void onResume() {
@@ -87,7 +93,7 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         id_view = v.getId();
 
-        if(v.getId() == R.id.Btn_AddSpot)
+        if(v.getId() == R.id.Btn_AddSpot_Image)
         {
             DialogInterface.OnClickListener cameralistener = new DialogInterface.OnClickListener() {
                 @Override
