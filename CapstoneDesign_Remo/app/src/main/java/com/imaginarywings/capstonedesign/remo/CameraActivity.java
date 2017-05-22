@@ -18,6 +18,7 @@ import android.widget.ImageView;
 
 import com.imaginarywings.capstonedesign.remo.utils.CameraHelper;
 import com.imaginarywings.capstonedesign.remo.utils.CameraHelper.CameraInfo2;
+import com.imaginarywings.capstonedesign.remo.utils.GPUImageFilterTools;
 
 import java.io.File;
 import java.io.FileNotFoundException;

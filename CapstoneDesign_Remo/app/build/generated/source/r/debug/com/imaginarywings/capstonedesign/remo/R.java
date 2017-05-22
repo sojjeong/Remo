@@ -3237,7 +3237,7 @@ containing a value of this type.
         public static final int title=0x7f02009b;
     }
     public static final class id {
-        public static final int Btn_AddSpot=0x7f0e0083;
+        public static final int Btn_AddSpot=0x7f0e0082;
         public static final int ImgView_PhotoSpot=0x7f0e0084;
         public static final int action0=0x7f0e00c2;
         public static final int action_bar=0x7f0e0072;
@@ -3340,7 +3340,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f0e0045;
         public static final int image=0x7f0e0054;
         public static final int imageView=0x7f0e0081;
-        public static final int imageView2=0x7f0e0082;
+        public static final int imageView2=0x7f0e0083;
         public static final int imageView3=0x7f0e008d;
         public static final int imageView4=0x7f0e008e;
         public static final int imgBtn_p05=0x7f0e0099;
@@ -3518,28 +3518,30 @@ containing a value of this type.
         public static final int dialog_spot_detail=0x7f040030;
         public static final int fragment1=0x7f040031;
         public static final int fragment2=0x7f040032;
-        public static final int framents=0x7f040033;
-        public static final int item_local_search=0x7f040034;
-        public static final int map_container=0x7f040035;
-        public static final int notification_action=0x7f040036;
-        public static final int notification_action_tombstone=0x7f040037;
-        public static final int notification_media_action=0x7f040038;
-        public static final int notification_media_cancel_action=0x7f040039;
-        public static final int notification_template_big_media=0x7f04003a;
-        public static final int notification_template_big_media_custom=0x7f04003b;
-        public static final int notification_template_big_media_narrow=0x7f04003c;
-        public static final int notification_template_big_media_narrow_custom=0x7f04003d;
-        public static final int notification_template_custom_big=0x7f04003e;
-        public static final int notification_template_icon_group=0x7f04003f;
-        public static final int notification_template_lines_media=0x7f040040;
-        public static final int notification_template_media=0x7f040041;
-        public static final int notification_template_media_custom=0x7f040042;
-        public static final int notification_template_part_chronometer=0x7f040043;
-        public static final int notification_template_part_time=0x7f040044;
-        public static final int select_dialog_item_material=0x7f040045;
-        public static final int select_dialog_multichoice_material=0x7f040046;
-        public static final int select_dialog_singlechoice_material=0x7f040047;
-        public static final int support_simple_spinner_dropdown_item=0x7f040048;
+        public static final int fragment_add_spot=0x7f040033;
+        public static final int fragmentactivity_add_spot=0x7f040034;
+        public static final int framents=0x7f040035;
+        public static final int item_local_search=0x7f040036;
+        public static final int map_container=0x7f040037;
+        public static final int notification_action=0x7f040038;
+        public static final int notification_action_tombstone=0x7f040039;
+        public static final int notification_media_action=0x7f04003a;
+        public static final int notification_media_cancel_action=0x7f04003b;
+        public static final int notification_template_big_media=0x7f04003c;
+        public static final int notification_template_big_media_custom=0x7f04003d;
+        public static final int notification_template_big_media_narrow=0x7f04003e;
+        public static final int notification_template_big_media_narrow_custom=0x7f04003f;
+        public static final int notification_template_custom_big=0x7f040040;
+        public static final int notification_template_icon_group=0x7f040041;
+        public static final int notification_template_lines_media=0x7f040042;
+        public static final int notification_template_media=0x7f040043;
+        public static final int notification_template_media_custom=0x7f040044;
+        public static final int notification_template_part_chronometer=0x7f040045;
+        public static final int notification_template_part_time=0x7f040046;
+        public static final int select_dialog_item_material=0x7f040047;
+        public static final int select_dialog_multichoice_material=0x7f040048;
+        public static final int select_dialog_singlechoice_material=0x7f040049;
+        public static final int support_simple_spinner_dropdown_item=0x7f04004a;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;

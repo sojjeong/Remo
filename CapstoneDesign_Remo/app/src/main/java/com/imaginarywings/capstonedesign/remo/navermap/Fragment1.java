@@ -167,6 +167,8 @@ public class Fragment1 extends NMapFragment {
 
 		// 데이터 제공 리스너 제대로 동작하는지 확인해야함
 		mMapContext.setMapDataProviderListener(onDataProviderListener);
+
+		createSpotMarker();
 	}
 
 	@Override
@@ -393,8 +395,6 @@ public class Fragment1 extends NMapFragment {
 			Toast.makeText(getActivity(), "현재 위치를 가져올 수 없습니다. GPS 상태를 확인해주세요!", Toast.LENGTH_SHORT).show();
 			stopMyLocation();
 		}
-
-        createSpotMarker();
 	}
 
 	private void stopMyLocation() {
