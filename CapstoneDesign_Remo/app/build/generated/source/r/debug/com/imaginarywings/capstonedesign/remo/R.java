@@ -3337,8 +3337,8 @@ containing a value of this type.
         public static final int icon=0x7f0e0057;
         public static final int icon_group=0x7f0e00d4;
         public static final int icon_only=0x7f0e0048;
+        public static final int id_AddSpotMapView=0x7f0e00b0;
         public static final int id_AddSpot_SearchView=0x7f0e0086;
-        public static final int id_AddspotMapView=0x7f0e00b0;
         public static final int id_SpotAddress=0x7f0e0085;
         public static final int id_SpotSearch=0x7f0e00b8;
         public static final int ifRoom=0x7f0e0045;

@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <com.nhn.android.maps.NMapView
-        android:layout_width="fill_parent"
-        android:layout_height="560dp"
-        android:id="@+id/id_AddspotMapView"/>
+        android:id="@+id/id_AddSpotMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

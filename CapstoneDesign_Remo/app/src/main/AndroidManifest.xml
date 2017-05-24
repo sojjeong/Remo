@@ -76,6 +76,9 @@
             android:name=".navermap.AddSpotActivity"
             android:label="AddSpotActivity" />
 
+        <activity android:name=".navermap.AddSpotFragmentActivity"
+            android:label="AddSpotFragmentActivity" />
+
         <activity
             android:name=".LocalSearchActivity"
             android:label="LocalSearchActivity" />

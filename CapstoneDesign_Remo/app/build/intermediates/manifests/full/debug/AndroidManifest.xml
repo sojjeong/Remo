@@ -80,6 +80,9 @@
             android:name="com.imaginarywings.capstonedesign.remo.navermap.AddSpotActivity"
             android:label="AddSpotActivity" />
         <activity
+            android:name="com.imaginarywings.capstonedesign.remo.navermap.AddSpotFragmentActivity"
+            android:label="AddSpotFragmentActivity" />
+        <activity
             android:name="com.imaginarywings.capstonedesign.remo.LocalSearchActivity"
             android:label="LocalSearchActivity" />
         <activity

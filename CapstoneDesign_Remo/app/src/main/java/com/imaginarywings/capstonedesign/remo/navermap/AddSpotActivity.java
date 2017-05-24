@@ -29,6 +29,7 @@ import java.io.FileOutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AddSpotActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -125,6 +126,12 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    @OnClick(R.id.btn_AddSpot_Search)
+    public void btnAddSpotSearch()
+    {
+       Intent AddSpotMap = new Intent(getApplicationContext(), AddSpotFragmentActivity.class);
+       startActivity(AddSpotMap);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
