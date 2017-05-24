@@ -1,24 +1,34 @@
 package com.imaginarywings.capstonedesign.remo;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.graphics.Point;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.Parameters;
+import android.media.Image;
 import android.net.Uri;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Surface;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Display;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
+import com.bumptech.glide.Glide;
 import com.imaginarywings.capstonedesign.remo.utils.CameraHelper;
 import com.imaginarywings.capstonedesign.remo.utils.CameraHelper.CameraInfo2;
-import com.imaginarywings.capstonedesign.remo.utils.GPUImageFilterTools;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,22 +44,29 @@ import jp.co.cyberagent.android.gpuimage.GPUImage.OnPictureSavedListener;
 import jp.co.cyberagent.android.gpuimage.GPUImageFilter;
 
 
-
 public class CameraActivity extends AppCompatActivity implements OnClickListener {
     private final String TAG = getClass().getSimpleName();
 
-    @BindView(R.id.camera_preview) GLSurfaceView mCameraPreview;
-    @BindView(R.id.camera_guide) ImageView mGuideImage;
+    @BindView(R.id.camera_preview)
+    GLSurfaceView mCameraPreview;
+    @BindView(R.id.camera_guide)
+    ImageView mGuideImage;
+//    @BindView(R.id.switch_black)
+//    ImageView black;
 
 
     private GPUImage mGPUImage;
     private CameraHelper mCameraHelper;
     private CameraLoader mCamera;
-    private GPUImageFilter mFilter;
-    private GPUImageFilterTools.FilterAdjuster mFilterAdjuster;
+    //    private GPUImageFilter mFilter;
+//    private GPUImageFilterTools.FilterAdjuster mFilterAdjuster;
     ImageButton btnCapture;
     ImageButton btnSwitch;
-    //ImageButton btnGallery;
+    ImageButton btnGallery;
+
+    int width;
+
+    private final static int CAMERA_FACING = Camera.CameraInfo.CAMERA_FACING_BACK;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -64,17 +81,38 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
         mCamera = new CameraLoader();
 
         btnCapture = (ImageButton) findViewById(R.id.btnCapture);
-        btnCapture.setOnClickListener(this) ;
+        btnCapture.setOnClickListener(this);
 
-        btnSwitch = (ImageButton) findViewById(R.id.btnSwitch);
-        btnSwitch.setOnClickListener(this) ;
+        btnGallery = (ImageButton) findViewById(R.id.btnGallery);
+        btnGallery.setOnClickListener(this);
 
         //화면 전환
-        View cameraSwitchView = findViewById(R.id.btnSwitch);
-        cameraSwitchView.setOnClickListener(this);
+        btnSwitch = (ImageButton) findViewById(R.id.btnSwitch);
+        btnSwitch.setOnClickListener(this);
         if (!mCameraHelper.hasFrontCamera() || !mCameraHelper.hasBackCamera()) {
-            cameraSwitchView.setVisibility(View.GONE);
+            btnSwitch.setVisibility(View.GONE);
         }
+
+        //화면 가로 크기에 따라 세로 크기 변경
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        width = size.x;
+
+        View cameraLayout = findViewById(R.id.camera_layout);
+        cameraLayout.setLayoutParams(new RelativeLayout.LayoutParams(width, width));
+
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) cameraLayout.getLayoutParams();
+        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        cameraLayout.setLayoutParams(layoutParams);
+//
+//        View cameraPreview = findViewById(R.id.camera_preview);
+//        cameraPreview.setLayoutParams(new FrameLayout.LayoutParams(width,width));
+
+        Glide.with(this)
+                .load(R.drawable.guidetest)
+                .thumbnail(0.1f)
+                .into(mGuideImage);
     }
 
     @Override
@@ -121,6 +159,13 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
             case R.id.btnSwitch:
                 mCamera.switchCamera();
                 break;
+
+            case R.id.btnGallery:
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setType
+                        (android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+                startActivity(intent);
+                break;
         }
     }
 
@@ -145,22 +190,23 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
                             return;
                         }
 
-                        //사진 회전
-//                        int w = camera.getParameters().getPictureSize().width;
-//                        int h = camera.getParameters().getPictureSize().height;
-//
-//                        int orientation = setCameraDisplayOrientation(CameraActivity.this, CAMERA_FACING, camera);
-//
-//
-//                        //byte array를 bitmap으로 변환
-//                        BitmapFactory.Options options = new BitmapFactory.Options();
-//                        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-//                        Bitmap bitmap = BitmapFactory.decodeByteArray( data, 0, data.length, options);
-//
-//                        //이미지를 디바이스 방향으로 회전
-//                        Matrix matrix = new Matrix();
-//                        matrix.postRotate(orientation);
-//                        bitmap =  Bitmap.createBitmap(bitmap, 0, 0, w, h, matrix, true);
+                        //사진 회전 부분
+                        //이미지의 너비와 높이 결정
+                        int w = camera.getParameters().getPictureSize().width;
+                        int h = camera.getParameters().getPictureSize().height;
+
+                        int orientation = setCameraDisplayOrientation(CameraActivity.this, CAMERA_FACING, camera);
+
+
+                        //byte array를 bitmap으로 변환
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length, options);
+
+                        //이미지를 디바이스 방향으로 회전
+                        Matrix matrix = new Matrix();
+                        matrix.postRotate(orientation);
+                        bitmap = Bitmap.createBitmap(bitmap, 0, 0, w, h, matrix, true);
 
 
                         try {
@@ -173,13 +219,13 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
                             Log.d("ASDF", "Error accessing file: " + e.getMessage());
                         }
 
-                        data = null;
-                        Bitmap bitmap = BitmapFactory.decodeFile(pictureFile.getAbsolutePath());
-                        // mGPUImage.setImage(bitmap);
+//                        data = null;
+//                        Bitmap bitmap = BitmapFactory.decodeFile(pictureFile.getAbsolutePath());
+//                        //mGPUImage.setImage(bitmap);
                         final GLSurfaceView view = mCameraPreview; //여기 이상
 
                         view.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
-                        mGPUImage.saveToPictures(bitmap, "GPUImage",
+                        mGPUImage.saveToPictures(bitmap, "Remo",
                                 System.currentTimeMillis() + ".jpg",
                                 new OnPictureSavedListener() {
 
@@ -195,6 +241,39 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
                 });
     }
 
+    public static int setCameraDisplayOrientation(Activity activity,
+                                                  int cameraId, android.hardware.Camera camera) {
+        android.hardware.Camera.CameraInfo info =
+                new android.hardware.Camera.CameraInfo();
+        android.hardware.Camera.getCameraInfo(cameraId, info);
+        int rotation = activity.getWindowManager().getDefaultDisplay()
+                .getRotation();
+        int degrees = 0;
+        switch (rotation) {
+            case Surface.ROTATION_0:
+                degrees = 0;
+                break;
+            case Surface.ROTATION_90:
+                degrees = 90;
+                break;
+            case Surface.ROTATION_180:
+                degrees = 180;
+                break;
+            case Surface.ROTATION_270:
+                degrees = 270;
+                break;
+        }
+
+        int result;
+        if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+            result = (info.orientation + degrees) % 360;
+            result = (360 - result) % 360;  // compensate the mirror
+        } else {  // back-facing
+            result = (info.orientation - degrees + 360) % 360;
+        }
+
+        return result;
+    }
 
 
     public static final int MEDIA_TYPE_IMAGE = 1;
@@ -248,8 +327,12 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
         }
 
         public void switchCamera() {
+//            mGuideImage.setVisibility(View.GONE);
+            mGuideImage.setImageDrawable(null);
+            mGuideImage.requestLayout();
             releaseCamera();
             mCurrentCameraId = (mCurrentCameraId + 1) % mCameraHelper.getNumberOfCameras();
+            reInitLayout();
             setUpCamera(mCurrentCameraId);
         }
 
@@ -262,6 +345,7 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
                     Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
                 parameters.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
             }
+
             mCameraInstance.setParameters(parameters);
 
             int orientation = mCameraHelper.getCameraDisplayOrientation(
@@ -270,9 +354,19 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
             mCameraHelper.getCameraInfo(mCurrentCameraId, cameraInfo);
             boolean flipHorizontal = cameraInfo.facing == CameraInfo.CAMERA_FACING_FRONT;
             mGPUImage.setUpCamera(mCameraInstance, orientation, flipHorizontal, false);
+
+//            mGuideImage.setImageDrawable(null);
+//            mGuideImage.setVisibility(View.VISIBLE);
+//            mGuideImage.requestLayout();
+//            Glide.with(CameraActivity.this)
+//                    .load(R.drawable.guidetest)
+//                    .thumbnail(0.1f)
+//                    .into(mGuideImage);
         }
 
-        /** A safe way to get an instance of the Camera object. */
+        /**
+         * A safe way to get an instance of the Camera object.
+         */
         private Camera getCameraInstance(final int id) {
             Camera c = null;
             try {
@@ -284,10 +378,22 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
         }
 
         private void releaseCamera() {
+            mCameraInstance.stopPreview();
             mCameraInstance.setPreviewCallback(null);
             mCameraInstance.release();
             mCameraInstance = null;
         }
+
+        public void reInitLayout() {
+            mCameraPreview.requestLayout();
+            mGPUImage.deleteImage();
+        }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
 }
