@@ -137,6 +137,9 @@ public class FragmentMapActivity extends FragmentActivity {
         finish();
     }
 
+    /**
+     * 포토스팟 지도 검색 창 버튼 클릭
+     */
     @OnClick(R.id.btn_MapSearch)
     public void btnSearchClick(){
 

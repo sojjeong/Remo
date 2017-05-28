@@ -1,13 +1,15 @@
 package com.imaginarywings.capstonedesign.remo.navermap;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,12 +17,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.imaginarywings.capstonedesign.remo.R;
-import com.imaginarywings.capstonedesign.remo.navermap.Fragment1;
-import com.imaginarywings.capstonedesign.remo.navermap.FragmentMapActivity;
-import com.imaginarywings.capstonedesign.remo.navermap.NMapPOIflagType;
 import com.nhn.android.maps.maplib.NGeoPoint;
 
 import java.io.BufferedOutputStream;
@@ -31,7 +32,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AddSpotActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddSpotActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int PICK_FROM_CAMERA = 0;
     private static final int PICK_FROM_ALBUM = 1;
@@ -42,10 +43,15 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
     private int id_view;
     private String absoultePath;
 
-    private TextView text_SpotAddress;
+    public static Context mContext;
+    public LocationManager locationManager;
 
-    @BindView(R.id.btn_AddSpot_Search) Button btnSearch;
-
+    @BindView(R.id.id_SpotAddress)
+    TextView text_SpotAddress;
+    @BindView(R.id.btn_AddSpot_Search)
+    Button btnSearch;
+    @BindView(R.id.id_AddSpot_SearchView)
+    SearchView searchAddSpot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,36 +60,53 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
 
         ButterKnife.bind(this);
 
-        iv_spot = (ImageView)this.findViewById(R.id.ImgView_PhotoSpot);
+        mContext = this;
 
-        ImageButton btnAddSpot = (ImageButton)this.findViewById(R.id.Btn_AddSpot_Image);
+        iv_spot = (ImageView) this.findViewById(R.id.ImgView_PhotoSpot);
+
+        ImageButton btnAddSpot = (ImageButton) this.findViewById(R.id.Btn_AddSpot_Image);
         btnAddSpot.setOnClickListener(this);
 
-        text_SpotAddress = (TextView)this.findViewById(R.id.id_SpotAddress);
+        text_SpotAddress = (TextView) this.findViewById(R.id.id_SpotAddress);
+
+        locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        //FragmentMapActivity 의 함수 호출 방법
-        //포토스팟 위도 경도 삽입
-        NGeoPoint Point = ((FragmentMapActivity)FragmentMapActivity.mContext).getAddress();
+        //GPS ON/OFF 유무 확인
+        boolean isEnable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-        /*
-        //위도
-        String latitude = String.valueOf(Point.getLatitude());
+        //활성화 되어 있다면 현재 위치에 대한 주소를 기본적인 주소로 지정한다.
+        if (isEnable) {
 
-        //경도
-        String longitude = String.valueOf(Point.getLongitude());
-        */
+            //FragmentMapActivity 의 함수 호출 방법
+            //포토스팟 위도 경도 삽입
+            NGeoPoint Point = ((FragmentMapActivity) FragmentMapActivity.mContext).getAddress();
 
-        String Address =
-                ((FragmentMapActivity)FragmentMapActivity.mContext).ConvertAddress(this, Point.getLatitude(), Point.getLongitude());
+            /*
+            //위도
+            String latitude = String.valueOf(Point.getLatitude());
 
-        text_SpotAddress.setText(Address);
+            //경도
+            String longitude = String.valueOf(Point.getLongitude());
+            */
+
+            String Address =
+                    ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertAddress(this, Point.getLatitude(), Point.getLongitude());
+
+            text_SpotAddress.setText(Address);
+        } else {
+
+            Toast.makeText(mContext, "GPS기능이 비활성화 되어 있습니다. 기능을 활성화 해주십시오.", Toast.LENGTH_SHORT).show();
+            
+            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            startActivity(intent);
+        }
     }
-
 
     @Override
     protected void onDestroy() {
@@ -94,8 +117,7 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         id_view = v.getId();
 
-        if(v.getId() == R.id.Btn_AddSpot_Image)
-        {
+        if (v.getId() == R.id.Btn_AddSpot_Image) {
             DialogInterface.OnClickListener cameralistener = new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -126,32 +148,54 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    //지도 검색
     @OnClick(R.id.btn_AddSpot_Search)
-    public void btnAddSpotSearch()
-    {
-       Intent AddSpotMap = new Intent(getApplicationContext(), AddSpotFragmentActivity.class);
-       startActivity(AddSpotMap);
+    public void btnAddSpotSearch() {
+        Intent AddSpotMap = new Intent(getApplicationContext(), AddSpotFragmentActivity.class);
+
+        searchAddSpot.clearFocus();
+        AddSpotFragment fragment = (AddSpotFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_add_spot);
+
+        NGeoPoint nPoint;
+        
+        String searchAddress = searchAddSpot.getQuery().toString();
+        nPoint = ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertLatLng(searchAddress);
+        
+        if(nPoint != null) {
+
+            //위도
+            String latitude = String.valueOf(nPoint.getLatitude());
+
+            //경도
+            String longitude = String.valueOf(nPoint.getLongitude());
+
+            Log.e("위도", latitude);
+            Log.e("경도", longitude);
+
+            startActivity(AddSpotMap);
+        }
+        else
+        {
+            Toast.makeText(mContext, "위치를 검색할 수 없습니다.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode != RESULT_OK)
+        if (resultCode != RESULT_OK)
             return;
 
-        switch(requestCode)
-        {
-            case PICK_FROM_ALBUM :
-            {
+        switch (requestCode) {
+            case PICK_FROM_ALBUM: {
                 mImageCaptureUri = data.getData();
                 Log.d("StartWheel", mImageCaptureUri.getPath().toString());
 
                 //break;
             }
 
-            case PICK_FROM_CAMERA :
-            {
+            case PICK_FROM_CAMERA: {
                 //이부분은 구현 안해도 됨! 사진에서 찍고 바로 하는 기능!!!
                 //후에 사용하려면 사용해도 됨
 
@@ -172,12 +216,10 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             }
 
-            case CROP_FROM_IMAGE:
-            {
+            case CROP_FROM_IMAGE: {
                 //크롭이 된 이후의 이미지를 넘겨 받는다.
                 //이미지뷰에 이미지를 보여준다거나 부가적인 작업 이후에 임시파일을 삭제한다
-                if(resultCode != RESULT_OK)
-                {
+                if (resultCode != RESULT_OK) {
                     return;
                 }
 
@@ -187,12 +229,11 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
                 String filePath = Environment.getExternalStorageDirectory().getAbsolutePath()
                         + "/SmartWheel/" + System.currentTimeMillis() + "jpg";
 
-                if(extras != null)
-                {
+                if (extras != null) {
                     Bitmap photo = extras.getParcelable("data");    //CROP된 BITMAP
                     iv_spot.setImageBitmap(photo);                  //레이아웃의 이미지뷰에 CROP된 BITMAP을 보여줌
 
-                    storeCropImage(photo,filePath);                 //CROP된 이미지를 외부 저장소, 앨범에 저장한ㄷ.
+                    storeCropImage(photo, filePath);                 //CROP된 이미지를 외부 저장소, 앨범에 저장한ㄷ.
                     absoultePath = filePath;
                     break;
 
@@ -200,8 +241,7 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
 
                 File f = new File(mImageCaptureUri.getPath());
 
-                if(f.exists())
-                {
+                if (f.exists()) {
                     f.delete();
                 }
             }
@@ -220,8 +260,7 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
         startActivityForResult(intent, PICK_FROM_CAMERA);
     }
 
-    public void TakeAlbumAction()
-    {
+    public void TakeAlbumAction() {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
         startActivityForResult(intent, PICK_FROM_ALBUM);
@@ -230,16 +269,16 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
     /**
      * 외부저장소에 크롭된 이미지를 저장하는 함수
      * 비트맵을 저장하는 부분
+     *
      * @param bitmap
      * @param filePath
      */
-    private void storeCropImage(Bitmap bitmap, String filePath)
-    {
+    private void storeCropImage(Bitmap bitmap, String filePath) {
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SmartWheel/";
         File directory_SmartWheel = new File(dirPath);
 
         //디렉터리에 폴더가 없다면 (새로 이미지를 저장하는 경우에 속한다.)
-        if(!directory_SmartWheel.exists())
+        if (!directory_SmartWheel.exists())
             directory_SmartWheel.mkdir();
 
         File copyFile = new File(dirPath);
@@ -254,8 +293,7 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
 
             out.flush();
             out.close();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

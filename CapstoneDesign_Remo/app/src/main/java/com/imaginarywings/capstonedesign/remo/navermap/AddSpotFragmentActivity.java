@@ -25,6 +25,7 @@ public class AddSpotFragmentActivity extends FragmentActivity {
 
         setContentView(R.layout.fragmentactivity_add_spot);
 
+        /*
         mMapView = (NMapView)findViewById(R.id.id_AddSpotMapView);
 
         // initialize map view
@@ -33,5 +34,6 @@ public class AddSpotFragmentActivity extends FragmentActivity {
         mMapView.setFocusable(true);
         mMapView.setFocusableInTouchMode(true);
         mMapView.requestFocus();
+        */
     }
 }
