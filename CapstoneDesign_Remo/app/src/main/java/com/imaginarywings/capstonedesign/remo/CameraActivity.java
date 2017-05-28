@@ -355,13 +355,13 @@ public class CameraActivity extends AppCompatActivity implements OnClickListener
             boolean flipHorizontal = cameraInfo.facing == CameraInfo.CAMERA_FACING_FRONT;
             mGPUImage.setUpCamera(mCameraInstance, orientation, flipHorizontal, false);
 
-//            mGuideImage.setImageDrawable(null);
-//            mGuideImage.setVisibility(View.VISIBLE);
-//            mGuideImage.requestLayout();
-//            Glide.with(CameraActivity.this)
-//                    .load(R.drawable.guidetest)
-//                    .thumbnail(0.1f)
-//                    .into(mGuideImage);
+            mGuideImage.setImageDrawable(null);
+            mGuideImage.setVisibility(View.VISIBLE);
+            mGuideImage.requestLayout();
+            Glide.with(CameraActivity.this)
+                    .load(R.drawable.guidetest)
+                    .thumbnail(0.1f)
+                    .into(mGuideImage);
         }
 
         /**
