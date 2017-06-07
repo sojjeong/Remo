@@ -17,6 +17,7 @@ ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app
 		INJECTED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml
 uses-feature#android.hardware.camera
 ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:7:5-60
+MERGED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:14:5-60
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:7:19-57
 uses-feature#android.hardware.location.gps
@@ -25,6 +26,7 @@ ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:8:19-63
 uses-permission#android.permission.CAMERA
 ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:11:5-65
+MERGED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:11:5-65
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:11:22-62
 uses-permission#android.permission.INTERNET
@@ -65,6 +67,7 @@ ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:31:22-70
 application
 ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:33:5-86:19
+MERGED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\58e32b255faf2852e041ee09d95a6ec83a9aae6c\output\AndroidManifest.xml:9:5-20
 MERGED from [com.naver.maps.open:naver-map-api:2.1.2] C:\Users\Administrator\.android\build-cache\92edcd0215c0eacd0e1e0757d751a7a33bb36757\output\AndroidManifest.xml:11:5-14:19
 MERGED from [gun0912.ted:tedpermission:1.0.3] C:\Users\Administrator\.android\build-cache\efe3d238989e440db3bb6fd7281cfef48c891468\output\AndroidManifest.xml:9:5-13:19
@@ -86,6 +89,7 @@ MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Administr
 MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Administrator\.android\build-cache\c9d279706c2a43445eebd550f17e683b5b37c8c6\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Administrator\.android\build-cache\f5cf65655b5572abb2d2d51b30a6d3048c73ada7\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Administrator\.android\build-cache\a84b57a6ca04172eb5b1e0b47dfc6a5df8408056\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:exifinterface:25.3.1] C:\Users\Administrator\.android\build-cache\bad57bf3fa0ce43c514f2360b0c9f9a3ca3fd7a9\output\AndroidManifest.xml:26:5-20
 	android:label
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:37:9-41
 	android:supportsRtl
@@ -173,6 +177,7 @@ ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:83:13-48
 uses-sdk
 INJECTED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\58e32b255faf2852e041ee09d95a6ec83a9aae6c\output\AndroidManifest.xml:5:5-7:41
 MERGED from [com.naver.maps.open:naver-map-api:2.1.2] C:\Users\Administrator\.android\build-cache\92edcd0215c0eacd0e1e0757d751a7a33bb36757\output\AndroidManifest.xml:7:5-9:41
 MERGED from [gun0912.ted:tedpermission:1.0.3] C:\Users\Administrator\.android\build-cache\efe3d238989e440db3bb6fd7281cfef48c891468\output\AndroidManifest.xml:5:5-7:41
@@ -182,7 +187,6 @@ MERGED from [com.google.android.gms:play-services-location:10.2.0] C:\Users\Admi
 MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Administrator\.android\build-cache\1b20a0caa143a206aaf2d0cf0e5ea78a1e6faa51\output\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Administrator\.android\build-cache\569cfb289f3fab526b30e319c469915e270f83ef\output\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Administrator\.android\build-cache\309091894cdc277df8be61bff3024b3fd6814243\output\AndroidManifest.xml:17:5-43
-MERGED from [jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1] C:\Users\Administrator\.android\build-cache\958f77c6be7711d5596b525c982e5c9dd5f4efb2\output\AndroidManifest.xml:8:5-10:41
 MERGED from [com.koushikdutta.ion:ion:2.1.9] C:\Users\Administrator\.android\build-cache\9691a4f3e8c9283db9aecd0d23a1a5db80f95a43\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.koushikdutta.async:androidasync:2.1.9] C:\Users\Administrator\.android\build-cache\592e5738df8760fd93d80dcb7a9c3876621fd279\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:25.3.1] C:\Users\Administrator\.android\build-cache\d0c5b3882a4793b1a1bd8a659fdd875695ea7f58\output\AndroidManifest.xml:21:5-23:62
@@ -197,6 +201,7 @@ MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Administr
 MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Administrator\.android\build-cache\c9d279706c2a43445eebd550f17e683b5b37c8c6\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Administrator\.android\build-cache\f5cf65655b5572abb2d2d51b30a6d3048c73ada7\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Administrator\.android\build-cache\a84b57a6ca04172eb5b1e0b47dfc6a5df8408056\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:exifinterface:25.3.1] C:\Users\Administrator\.android\build-cache\bad57bf3fa0ce43c514f2360b0c9f9a3ca3fd7a9\output\AndroidManifest.xml:20:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] C:\Users\Administrator\.android\build-cache\d0c5b3882a4793b1a1bd8a659fdd875695ea7f58\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -205,6 +210,28 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Administrator\.
 	android:minSdkVersion
 		INJECTED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:12:5-71
+	android:name
+		ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:12:22-68
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:15:5-17:36
+	android:required
+		ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:17:9-33
+	android:name
+		ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:16:9-57
+uses-feature#android.hardware.camera.front
+ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:18:5-20:36
+	android:required
+		ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:19:9-53
+uses-feature#android.hardware.microphone
+ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:21:5-23:36
+	android:required
+		ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:23:9-33
+	android:name
+		ADDED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:22:9-51
 activity#com.gun0912.tedpermission.TedPermissionActivity
 ADDED from [gun0912.ted:tedpermission:1.0.3] C:\Users\Administrator\.android\build-cache\efe3d238989e440db3bb6fd7281cfef48c891468\output\AndroidManifest.xml:10:9-12:56
 	android:theme
@@ -268,6 +295,7 @@ MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Administr
 MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Administrator\.android\build-cache\c9d279706c2a43445eebd550f17e683b5b37c8c6\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Administrator\.android\build-cache\f5cf65655b5572abb2d2d51b30a6d3048c73ada7\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Administrator\.android\build-cache\a84b57a6ca04172eb5b1e0b47dfc6a5df8408056\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:exifinterface:25.3.1] C:\Users\Administrator\.android\build-cache\bad57bf3fa0ce43c514f2360b0c9f9a3ca3fd7a9\output\AndroidManifest.xml:22:5-24:34
 	android:value
 		ADDED from [com.android.support:design:25.3.1] C:\Users\Administrator\.android\build-cache\d0c5b3882a4793b1a1bd8a659fdd875695ea7f58\output\AndroidManifest.xml:27:9-31
 	android:name
