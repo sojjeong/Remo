@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity">
 
     <FrameLayout
         android:id="@+id/camera_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true">
 
-        <android.opengl.GLSurfaceView
+        <com.flurgle.camerakit.CameraView
             android:id="@+id/camera_preview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center_horizontal"
             android:adjustViewBounds="true"
-            android:scaleType="fitXY" />
+            app:ckCropOutput="true"
+            app:ckFacing="back"
+            app:ckFlash="off"
+            app:ckFocus="tapWithMarker"
+            app:ckJpegQuality="100"
+            app:ckMethod="still"/>
 
         <ImageView
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:id="@+id/camera_guide"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,36 +39,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true" >
+        android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/btnSwitch"
+            android:id="@+id/switch_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="40dp"
             android:background="#00000000"
             android:scaleType="fitXY"
-            android:src="@drawable/switch_camera" />
+            android:src="@drawable/switch_camera"/>
 
         <ImageButton
-            android:id="@+id/btnCapture"
+            android:id="@+id/capture_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="40dp"
             android:background="#00000000"
             android:scaleType="fitXY"
-            android:src="@drawable/camera" />
+            android:src="@drawable/camera"/>
 
         <ImageButton
-            android:id="@+id/btnGallery"
+            android:id="@+id/gallery_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="40dp"
             android:background="#00000000"
             android:scaleType="fitXY"
-            android:src="@drawable/gallery" />
+            android:src="@drawable/gallery"/>
     </LinearLayout>
 
 </RelativeLayout>

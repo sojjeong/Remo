@@ -305,9 +305,9 @@ public class Fragment1 extends NMapFragment {
 		int markerId = NMapPOIflagType.PIN;
 
 		//포토스팟을 생성(id, type, android id, suject, address, 이미지경로, latitude, longitude)
-		PhotoSpotModel model1 = new PhotoSpotModel(1, "MAIN", "aid", "main1", "주소1", Consts.IMAGE_URL, 35.852548, 127.100824);
-		PhotoSpotModel model2 = new PhotoSpotModel(2, "MAIN", "aid", "main2", "주소2", Consts.IMAGE_URL, 35.852037, 127.101738);
-		PhotoSpotModel model3 = new PhotoSpotModel(3, "MAIN", "aid", "main3", "주소3", Consts.IMAGE_URL, 35.847722, 127.123735);
+		PhotoSpotModel model1 = new PhotoSpotModel(1, "MAIN", "aid", "main1", "주소1", Consts.DEFAULT_URL, 35.852548, 127.100824);
+		PhotoSpotModel model2 = new PhotoSpotModel(2, "MAIN", "aid", "main2", "주소2", Consts.DEFAULT_URL, 35.852037, 127.101738);
+		PhotoSpotModel model3 = new PhotoSpotModel(3, "MAIN", "aid", "main3", "주소3", Consts.DEFAULT_URL, 35.847722, 127.123735);
 
 		//여러 개의 오버레이 아이템을 하나의 오버레이 객체에서 관리하기 위한 오버레이 클래스의 객체 생성
 		NMapPOIdata poiData = new NMapPOIdata(2, mMapViewerResourceProvider);

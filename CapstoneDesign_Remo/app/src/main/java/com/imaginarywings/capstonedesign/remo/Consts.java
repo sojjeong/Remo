@@ -5,6 +5,6 @@ package com.imaginarywings.capstonedesign.remo;
  */
 
 public class Consts {
-    private static final String DEFAULT_URL = "http://berryzed.dothome.co.kr";
-    public static final String IMAGE_URL = DEFAULT_URL + "/pmc/data/20160923110349_20160923_105932.jpg";
+    public static final String DEFAULT_URL = "http://remo.needon.kr/remo";
+    public static final String API_URL = DEFAULT_URL + "/v1";
 }
