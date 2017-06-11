@@ -59,6 +59,7 @@ public class FragmentMapActivity extends FragmentActivity {
     private FloatingActionButton fabMain, fabAddSpot, fabMySpot, fabMylocation;
     boolean isOpen = false;
 
+    //포토스팟 프래그먼트 내부 변수 접근
     public Fragment1 PhotospotMap;
 
     //다른 액티비티에서 FragmentMapActivity 함수를 사용하기 위한 스태틱 변수

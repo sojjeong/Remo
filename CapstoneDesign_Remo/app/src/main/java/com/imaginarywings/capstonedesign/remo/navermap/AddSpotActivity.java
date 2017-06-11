@@ -48,8 +48,10 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
 
     @BindView(R.id.id_SpotAddress)
     TextView text_SpotAddress;
+
     @BindView(R.id.btn_AddSpot_Search)
     Button btnSearch;
+
     @BindView(R.id.id_AddSpot_SearchView)
     SearchView searchAddSpot;
 

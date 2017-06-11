@@ -1,8 +1,10 @@
 package com.imaginarywings.capstonedesign.remo.navermap;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -11,6 +13,8 @@ import com.imaginarywings.capstonedesign.remo.R;
 import com.nhn.android.maps.NMapContext;
 import com.nhn.android.maps.NMapController;
 import com.nhn.android.maps.NMapView;
+import com.nhn.android.maps.maplib.NGeoPoint;
+import com.nhn.android.maps.nmapmodel.NMapError;
 import com.nhn.android.maps.overlay.NMapPOIdata;
 import com.nhn.android.maps.overlay.NMapPOIitem;
 import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
@@ -52,12 +56,20 @@ public class AddSpotFragment extends NMapFragment {
 
     public NMapContext mMapContext;
 
+    //지도 화면 중심의 위,경도
+    public NGeoPoint mCenterAddress;
+    public String mStringCenterAddress;
+
+    public Context mContext;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mMapContext = new NMapContext(super.getActivity());
         mMapContext.onCreate();
+
+        mContext = getActivity();
     }
 
     @Override
@@ -75,6 +87,9 @@ public class AddSpotFragment extends NMapFragment {
         mMapView.setClientId(CLIENT_ID);
 
         mMapContext.setupMapView(mMapView);
+
+        mMapView.setOnMapStateChangeListener(mStateChangeListener);
+        mMapView.setOnMapViewTouchEventListener(mTouchEvnetListener);
 
         //자세한 확대 (수치는 적절히 조정하도록)
         mMapView.setScalingFactor(2.0f);
@@ -95,6 +110,7 @@ public class AddSpotFragment extends NMapFragment {
 
         //NMapView를 생성하면서 자동으로 컨트롤러도 생성되므로 NMapView로부터 얻어온다.
         mMapController = mMapView.getMapController();
+
     }
 
     @Override
@@ -126,6 +142,100 @@ public class AddSpotFragment extends NMapFragment {
         mMapView.setOnMapStateChangeListener((NMapView.OnMapStateChangeListener) null);
 
         super.onDestroy();
+    }
+
+    /**
+     * 맵 상태변화 리스너
+     */
+    private NMapView.OnMapStateChangeListener mStateChangeListener = new NMapView.OnMapStateChangeListener() {
+        @Override
+        public void onMapInitHandler(NMapView nMapView, NMapError nMapError) {
+
+            if(nMapError == null)
+            {
+                // 초기 위치 설정
+                mMapController.setMapCenter(new NGeoPoint(127.131342, 35.847532), 11);
+
+            } else {
+                Toast.makeText(getActivity(), "지도를 초기화하는데 실패하였습니다.\n message: " + nMapError.message, Toast.LENGTH_SHORT).show();
+                getActivity().finish();
+            }
+        }
+
+        //지도 중심 변경 시 호출되며 변경된 중심 좌표가 파라미터로 전달된다.
+        @Override
+        public void onMapCenterChange(NMapView nMapView, NGeoPoint nGeoPoint) {
+            String Latitude = String.valueOf(nGeoPoint.getLatitude());
+            String Longitude = String.valueOf(nGeoPoint.getLongitude());
+
+            mCenterAddress = nGeoPoint;
+
+            mStringCenterAddress =
+                    ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertAddress(mContext, mCenterAddress.getLatitude(), mCenterAddress.getLongitude());
+
+            Log.d(TAG, Latitude);
+            Log.d(TAG, Longitude);
+            Log.d(TAG, mStringCenterAddress);
+
+
+            //지도 센터의 값을 주소로 변환하여 AddSpotFragmentActivity의 주소를 담는 텍스트뷰를 계속 갱신시킨다.
+            ((AddSpotFragmentActivity) AddSpotFragmentActivity.mContext).text_CenterAddress.setText(mStringCenterAddress);
+        }
+
+        @Override
+        public void onMapCenterChangeFine(NMapView nMapView) {
+
+        }
+
+        @Override
+        public void onZoomLevelChange(NMapView nMapView, int i) {
+
+        }
+
+        @Override
+        public void onAnimationStateChange(NMapView nMapView, int i, int i1) {
+
+        }
+    };
+
+    private NMapView.OnMapViewTouchEventListener mTouchEvnetListener = new NMapView.OnMapViewTouchEventListener() {
+        @Override
+        public void onLongPress(NMapView nMapView, MotionEvent motionEvent) {
+
+        }
+
+        @Override
+        public void onLongPressCanceled(NMapView nMapView) {
+
+        }
+
+        @Override
+        public void onTouchDown(NMapView nMapView, MotionEvent motionEvent) {
+
+        }
+
+        @Override
+        public void onTouchUp(NMapView nMapView, MotionEvent motionEvent) {
+
+        }
+
+        @Override
+        public void onScroll(NMapView nMapView, MotionEvent motionEvent, MotionEvent motionEvent1) {
+
+        }
+
+        @Override
+        public void onSingleTapUp(NMapView nMapView, MotionEvent motionEvent) {
+
+        }
+    };
+
+    /**
+     * 화면 중심 좌표 get함수
+     */
+    public String getCenterAddress()
+    {
+        return mStringCenterAddress;
     }
 
     /**
