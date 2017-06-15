@@ -1,59 +1,61 @@
 package com.imaginarywings.capstonedesign.remo.navermap;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.database.Cursor;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.gson.JsonObject;
 import com.imaginarywings.capstonedesign.remo.R;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.async.http.body.FilePart;
+import com.koushikdutta.async.http.body.Part;
+import com.koushikdutta.async.http.body.StringPart;
+import com.koushikdutta.ion.Ion;
 import com.nhn.android.maps.maplib.NGeoPoint;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AddSpotActivity extends AppCompatActivity implements View.OnClickListener {
+import static com.imaginarywings.capstonedesign.remo.Consts.API_URL;
 
-    private static final int PICK_FROM_CAMERA = 0;
-    private static final int PICK_FROM_ALBUM = 1;
-    private static final int CROP_FROM_IMAGE = 2;
+public class AddSpotActivity extends AppCompatActivity {
 
-    private Uri mImageCaptureUri;
-    private ImageView iv_spot;
-    private int id_view;
-    private String absoultePath;
+    private final int REQUEST_SELECT_PHOTO = 1004;
+
+    private final String TAG = getClass().getSimpleName();
 
     public static Context mContext;
     public LocationManager locationManager;
+    private String mSelectedImagePath;
+    public NGeoPoint mSavePoint;
 
-    @BindView(R.id.id_SpotAddress)
-    TextView text_SpotAddress;
+    @BindView(R.id.id_SpotAddress) TextView mtext_SpotAddress;
+    @BindView(R.id.btn_AddSpot_Search) Button mbtnSearch;
+    @BindView(R.id.id_editTextAddressSearch) EditText mEditText_AddressSearch;
+    @BindView(R.id.Btn_AddSpot_Image) ImageButton mbtnAddSpotImage;
+    @BindView(R.id.id_ImgView_PhotoSpot) ImageView mPhotospotImage;
+    @BindView(R.id.id_imgbtnSaveSpot) ImageButton mSaveSpot;
 
-    @BindView(R.id.btn_AddSpot_Search)
-    Button btnSearch;
 
-    @BindView(R.id.id_AddSpot_SearchView)
-    SearchView searchAddSpot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,46 +66,26 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
 
         mContext = this;
 
-        iv_spot = (ImageView) this.findViewById(R.id.ImgView_PhotoSpot);
-
-        ImageButton btnAddSpot = (ImageButton) this.findViewById(R.id.Btn_AddSpot_Image);
-        btnAddSpot.setOnClickListener(this);
-
-        text_SpotAddress = (TextView) this.findViewById(R.id.id_SpotAddress);
-
         locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
 
         //GPS ON/OFF 유무 확인
         boolean isEnable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-        //활성화 되어 있다면 현재 위치에 대한 주소를 기본적인 주소로 지정한다.
+        //활성화 되어 있다면 처음 생성할 때 현재 위치에 대한 주소를 기본적인 주소로 지정한다.
         if (isEnable) {
 
             //FragmentMapActivity 의 함수 호출 방법
             //포토스팟 위도 경도 삽입
-            NGeoPoint Point = ((FragmentMapActivity) FragmentMapActivity.mContext).getAddress();
-
-            /*
-            //위도
-            String latitude = String.valueOf(Point.getLatitude());
-
-            //경도
-            String longitude = String.valueOf(Point.getLongitude());
-            */
+            mSavePoint = ((FragmentMapActivity) FragmentMapActivity.mContext).getAddress();
 
             String Address =
-                    ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertAddress(this, Point.getLatitude(), Point.getLongitude());
+                    ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertAddress(this, mSavePoint.getLatitude(), mSavePoint.getLongitude());
 
-            text_SpotAddress.setText(Address);
+            mtext_SpotAddress.setText(Address);
         } else {
 
             Toast.makeText(mContext, "GPS기능이 비활성화 되어 있습니다. 기능을 활성화 해주십시오.", Toast.LENGTH_SHORT).show();
-            
+
             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             intent.addCategory(Intent.CATEGORY_DEFAULT);
             startActivity(intent);
@@ -111,56 +93,62 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == REQUEST_SELECT_PHOTO) {
+            if(resultCode == RESULT_OK)
+            {
+                if(data != null)
+                {
+                    Uri uri = data.getData();
+
+                    Glide.with(this)
+                            .load(uri)
+                            .thumbnail(0.1f)
+                            .into(mPhotospotImage);
+
+                    mSaveSpot.setEnabled(true);
+                    mSelectedImagePath = getPathFromUri(uri);
+                }
+            }
+            else
+            {
+                mSaveSpot.setEnabled(false);
+                mSelectedImagePath = null;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }
 
-    @Override
-    public void onClick(View v) {
-        id_view = v.getId();
-
-        if (v.getId() == R.id.Btn_AddSpot_Image) {
-            DialogInterface.OnClickListener cameralistener = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    TakePhotoAction();
-                }
-            };
-
-            DialogInterface.OnClickListener albumlistener = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    TakeAlbumAction();
-                }
-            };
-
-            DialogInterface.OnClickListener cancelListener = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            };
-
-            //버튼 옵션에 따라서 바뀜.. Positive, Title, Neutral, Negative 등등
-            new AlertDialog.Builder(this).setTitle("업로드할 이미지 선택")
-                    //.setPositiveButton("카메라 촬영", cameralistener)      //에러 발생
-                    .setNeutralButton("앨범 선택", albumlistener)
-                    .setNegativeButton("취소", cancelListener)
-                    .show();
-        }
+    @OnClick(R.id.Btn_AddSpot_Image)
+    public void addSpotBtnClick()
+    {
+        Intent photoPickerIntet = new Intent(Intent.ACTION_PICK);
+        photoPickerIntet.setType("image/*");
+        startActivityForResult(photoPickerIntet, REQUEST_SELECT_PHOTO);
     }
 
     //지도 검색
     @OnClick(R.id.btn_AddSpot_Search)
-    public void btnAddSpotSearch() {
+    public void selecteBtnAddSpotSearch() {
         Intent AddSpotMap = new Intent(getApplicationContext(), AddSpotFragmentActivity.class);
 
-        searchAddSpot.clearFocus();
         AddSpotFragment fragment = (AddSpotFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_add_spot);
 
         NGeoPoint nPoint;
-        
-        String searchAddress = searchAddSpot.getQuery().toString();
+
+        String searchAddress = String.valueOf(mEditText_AddressSearch.getText());
+
         nPoint = ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertLatLng(searchAddress);
         
         if(nPoint != null) {
@@ -182,123 +170,82 @@ public class AddSpotActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode != RESULT_OK)
-            return;
-
-        switch (requestCode) {
-            case PICK_FROM_ALBUM: {
-                mImageCaptureUri = data.getData();
-                Log.d("StartWheel", mImageCaptureUri.getPath().toString());
-
-                //break;
-            }
-
-            case PICK_FROM_CAMERA: {
-                //이부분은 구현 안해도 됨! 사진에서 찍고 바로 하는 기능!!!
-                //후에 사용하려면 사용해도 됨
-
-                //이미지를 가져온 이후에 리사이즈할 이미지 크기를 결정
-                //이후에 이미지 크롭 어플리케이션을 호출
-                Intent intent = new Intent("com.android.camera.action.CROP");
-                intent.setDataAndType(mImageCaptureUri, "image/*");
-
-                //CROP 할 이미지를 300*300 크기로 저장
-                intent.putExtra("outputX", 300);
-                intent.putExtra("outputY", 300);
-                intent.putExtra("aspectX", 1);
-                intent.putExtra("aspectY", 1);
-                intent.putExtra("scale", true);
-                intent.putExtra("return-data", true);
-                startActivityForResult(intent, CROP_FROM_IMAGE);
-
-                break;
-            }
-
-            case CROP_FROM_IMAGE: {
-                //크롭이 된 이후의 이미지를 넘겨 받는다.
-                //이미지뷰에 이미지를 보여준다거나 부가적인 작업 이후에 임시파일을 삭제한다
-                if (resultCode != RESULT_OK) {
-                    return;
-                }
-
-                final Bundle extras = data.getExtras();
-
-                //CROP된 이미지를 저장하기 위한 FILE 경로
-                String filePath = Environment.getExternalStorageDirectory().getAbsolutePath()
-                        + "/SmartWheel/" + System.currentTimeMillis() + "jpg";
-
-                if (extras != null) {
-                    Bitmap photo = extras.getParcelable("data");    //CROP된 BITMAP
-                    iv_spot.setImageBitmap(photo);                  //레이아웃의 이미지뷰에 CROP된 BITMAP을 보여줌
-
-                    storeCropImage(photo, filePath);                 //CROP된 이미지를 외부 저장소, 앨범에 저장한ㄷ.
-                    absoultePath = filePath;
-                    break;
-
-                }
-
-                File f = new File(mImageCaptureUri.getPath());
-
-                if (f.exists()) {
-                    f.delete();
-                }
-            }
-        }
-    }
-
-    private void TakePhotoAction() {
-
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        //임시로 사용할 파일의 경로 생성
-        String url = "tmp_" + String.valueOf(System.currentTimeMillis()) + "jpg";
-        mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
-
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
-        startActivityForResult(intent, PICK_FROM_CAMERA);
-    }
-
-    public void TakeAlbumAction() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
-        startActivityForResult(intent, PICK_FROM_ALBUM);
-    }
-
     /**
-     * 외부저장소에 크롭된 이미지를 저장하는 함수
-     * 비트맵을 저장하는 부분
-     *
-     * @param bitmap
-     * @param filePath
+     * 포토스팟 등록
      */
-    private void storeCropImage(Bitmap bitmap, String filePath) {
-        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SmartWheel/";
-        File directory_SmartWheel = new File(dirPath);
-
-        //디렉터리에 폴더가 없다면 (새로 이미지를 저장하는 경우에 속한다.)
-        if (!directory_SmartWheel.exists())
-            directory_SmartWheel.mkdir();
-
-        File copyFile = new File(dirPath);
-        BufferedOutputStream out = null;
-
-        try {
-            copyFile.createNewFile();
-            out = new BufferedOutputStream(new FileOutputStream(copyFile));
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-
-            sendBroadcast(new Intent(getIntent().ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(copyFile)));
-
-            out.flush();
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+    @OnClick(R.id.id_imgbtnSaveSpot)
+    public void selectBtnSaveSpot() {
+        if(mSelectedImagePath == null)
+        {
+            Toast.makeText(this, "사진을 선택해주세요.", Toast.LENGTH_SHORT).show();
+            return;
         }
+        final AlertDialog dialog = new AlertDialog.Builder(this)
+                .setMessage("잠시만 기다려주세요.")
+                .setCancelable(false).show();
 
+        //서버 전송을 위한 데이터
+        List<Part> parts = new ArrayList<>();
+
+        parts.add(new FilePart("image", new File(mSelectedImagePath)));
+
+        //주소
+        if(mtext_SpotAddress.getText() != null)
+            parts.add(new StringPart("spot_address", String.valueOf(mtext_SpotAddress.getText())));
+        else
+            Toast.makeText(this, "주소를 입력해주세요.", Toast.LENGTH_SHORT).show();
+
+        //이름
+        parts.add(new StringPart("spot_name", "임시이름"));
+
+        //uuid
+        parts.add(new StringPart("user_uuid", "사용자 uuid"));
+
+        //위,경도
+        if(mSavePoint != null)
+        {
+            parts.add(new StringPart("spot_latitude", String.valueOf(mSavePoint.getLatitude())));
+            parts.add(new StringPart("spot_longitude", String.valueOf(mSavePoint.getLongitude())));
+        }
+        else
+            Toast.makeText(this, "잘못된 위치입니다. 다시 확인해보세요.", Toast.LENGTH_SHORT).show();
+
+        Ion.with(this)
+                .load(API_URL + "/spot")
+                .addMultipartParts(parts)
+                .asJsonObject()
+                .setCallback(new FutureCallback<JsonObject>() {
+                    @Override
+                    public void onCompleted(Exception e, JsonObject result) {
+                        dialog.cancel();
+                        if (e != null) {
+                            Toast.makeText(AddSpotActivity.this, "업로드에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                            Log.i(TAG, "onCompleted: " + e.getLocalizedMessage());
+                        } else {
+
+                            Log.d(TAG, "onCompleted: " + result.toString());
+                            int code = result.get("code").getAsInt();
+                            if (code != 201) {
+                                Toast.makeText(AddSpotActivity.this, "업로드에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                                Log.i(TAG, "onCompleted: " + code);
+                            } else {
+                                Toast.makeText(AddSpotActivity.this, "업로드 성공", Toast.LENGTH_SHORT).show();
+                                Log.d(TAG, "onCompleted: " + result.get("data").toString());
+                                setResult(RESULT_OK);
+//                                finish();
+                            }
+                        }
+                    }
+                });
     }
 
+    //사진 uri 경로 얻어오기
+    public String getPathFromUri(Uri uri){
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null );
+        cursor.moveToNext();
+        String path = cursor.getString( cursor.getColumnIndex( "_data" ) );
+        cursor.close();
+
+        return path;
+    }
 }

@@ -17,18 +17,18 @@
 		android:layout_alignParentTop="true" />
 
     <!-- 대표 플로팅 버튼 -->
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="11dp"
-        android:clickable="true"
-        app:backgroundTint="@color/colorPrimary"
-        app:fabSize="normal"
-        app:srcCompat="@android:drawable/ic_input_add" />
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab_main"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentEnd="true"
+		android:layout_marginBottom="8dp"
+		android:layout_marginEnd="11dp"
+		android:clickable="true"
+		app:backgroundTint="@color/personalGreen"
+		app:fabSize="normal"
+		app:srcCompat="@drawable/plusicon" />
 
 
 	<android.support.design.widget.FloatingActionButton
@@ -40,8 +40,9 @@
 		android:layout_marginBottom="8dp"
 		android:clickable="true"
 		android:visibility="invisible"
+		app:backgroundTint="@color/personalOrange"
 		app:fabSize="normal"
-		app:srcCompat="@android:drawable/ic_dialog_map" />
+		app:srcCompat="@drawable/user" />
 
 
 	<android.support.design.widget.FloatingActionButton
@@ -53,25 +54,24 @@
 		android:layout_marginBottom="8dp"
 		android:clickable="true"
 		android:visibility="invisible"
-		app:backgroundTint="@color/colorAccent"
+		app:backgroundTint="@color/personalOrange"
 		app:fabSize="normal"
-		app:srcCompat="@android:drawable/ic_menu_camera" />
+		app:srcCompat="@android:drawable/ic_dialog_map" />
 
 
 	<android.support.design.widget.FloatingActionButton
 		android:id="@+id/fab_mylocation"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_above="@+id/fab_myspot"
-		android:layout_alignEnd="@+id/fab_myspot"
-		android:layout_alignStart="@+id/fab_myspot"
-		android:layout_marginBottom="10dp"
+		android:layout_marginBottom="8dp"
 		android:clickable="true"
 		android:visibility="invisible"
-		app:backgroundTint="@android:color/holo_orange_light"
+		app:backgroundTint="@color/personalOrange"
 		app:elevation="0dp"
 		app:fabSize="normal"
-		app:srcCompat="@android:drawable/ic_menu_mylocation" />
+		app:srcCompat="@drawable/location"
+		android:layout_above="@+id/fab_myspot"
+		android:layout_alignStart="@+id/fab_myspot" />
 
 	<SearchView
         android:id="@+id/id_SpotSearch"

@@ -60,7 +60,7 @@ public class AddSpotFragment extends NMapFragment {
     public NGeoPoint mCenterAddress;
     public String mStringCenterAddress;
 
-    public Context mContext;
+    public static Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
