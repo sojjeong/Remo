@@ -63,11 +63,6 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
-            android:name=".PhotospotActivity"
-            android:label="Photospot"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-
-        <activity
             android:name=".navermap.FragmentMapActivity"
             android:label="PhotospotFragment">
         </activity>

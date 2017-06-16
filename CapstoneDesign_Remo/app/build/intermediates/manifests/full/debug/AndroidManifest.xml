@@ -81,10 +81,6 @@
             android:label="Camera"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.imaginarywings.capstonedesign.remo.PhotospotActivity"
-            android:label="Photospot"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
             android:name="com.imaginarywings.capstonedesign.remo.navermap.FragmentMapActivity"
             android:label="PhotospotFragment" >
         </activity>

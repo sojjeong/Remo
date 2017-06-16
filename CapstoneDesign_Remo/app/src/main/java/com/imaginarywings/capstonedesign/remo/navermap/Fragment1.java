@@ -1,6 +1,7 @@
 package com.imaginarywings.capstonedesign.remo.navermap;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -75,6 +76,8 @@ public class Fragment1 extends NMapFragment {
 
 	public NMapContext mMapContext;
 
+	public static Context mContext;
+
 	public Fragment1()
 	{
 
@@ -86,6 +89,8 @@ public class Fragment1 extends NMapFragment {
 
 		mMapContext = new NMapContext(super.getActivity());
 		mMapContext.onCreate();
+
+		mContext = getActivity();
 	}
 
 	@Override
@@ -161,6 +166,15 @@ public class Fragment1 extends NMapFragment {
 	public void onResume() {
 		super.onResume();
 		mMapContext.onResume();
+
+        /**
+         * AddSpotActivity 에서 업로드를 성공하면 포토스팟이 생성된다.
+         */
+		if(((AddSpotActivity)AddSpotActivity.mContext).mMarkerEnable == true)
+		{
+			createSpotMarker(((AddSpotActivity)AddSpotActivity.mContext).getSpotModel());
+			((AddSpotActivity)AddSpotActivity.mContext).mMarkerEnable = false;
+		}
 	}
 
 	@Override
@@ -317,6 +331,55 @@ public class Fragment1 extends NMapFragment {
 		poiData.addPOIitem(127.130746, 35.847756, null, markerId, model1, 1);
 		poiData.addPOIitem(127.132028, 35.847834, null, markerId, model2, 2);
 		poiData.addPOIitem(127.123735, 35.847722, null, markerId, model3, 3);
+		//poiData.endPOIdata();
+
+		// create POI data overlay
+		NMapPOIdataOverlay poiDataOverlay = mOverlayManager.createPOIdataOverlay(poiData, null);
+		poiDataOverlay.setOnStateChangeListener(new NMapPOIdataOverlay.OnStateChangeListener() {
+
+			//POI 아이템의 선택 상태 변경 시 호출되는 콜백 인터페이스를 정의
+			@Override
+			public void onFocusChanged(NMapPOIdataOverlay poiDataOverlay, NMapPOIitem item) {
+				if (item != null) {
+					Log.i(TAG, "onFocusChanged: " + item.getTag().toString());
+
+					PhotoSpotModel model = (PhotoSpotModel) item.getTag();
+					FragmentManager manager = getFragmentManager();
+					Fragment frag = manager.findFragmentByTag(TAG_SPOT_DETAIL_DIALOG);
+					if (frag != null) {
+						manager.beginTransaction().remove(frag).commit();
+					}
+
+					//포토스팟을 눌렀을 때 나오는 팝업창
+					SpotDetailDialog dialog = new SpotDetailDialog();
+					Bundle data = new Bundle();
+					data.putParcelable("detail", model);
+					dialog.setArguments(data);
+					dialog.show(manager, TAG_SPOT_DETAIL_DIALOG);
+				}
+			}
+
+			@Override
+			public void onCalloutClick(NMapPOIdataOverlay poiDataOverlay, NMapPOIitem item) {
+				if (item != null) {
+					Log.i(TAG, "onCalloutClick: " + item.toString());
+				}
+			}
+		});
+
+		mOverlayManager.addOverlay(poiDataOverlay);
+	}
+
+	//포토스팟 마커 생성(인자 포토스팟 모델)
+	public void createSpotMarker(PhotoSpotModel photospot) {
+		int markerId = NMapPOIflagType.PIN;
+
+		//여러 개의 오버레이 아이템을 하나의 오버레이 객체에서 관리하기 위한 오버레이 클래스의 객체 생성
+		NMapPOIdata poiData = new NMapPOIdata(2, mMapViewerResourceProvider);
+
+		// 경도, 위도, 표시문구, 표시할 마커 이미지의 id값, 객체, 오버레이를 관리하기 위한 id값
+		//poiData.beginPOIdata(3);
+		poiData.addPOIitem(photospot.getLongitude(), photospot.getLatitude(), null, markerId, photospot, 1);
 		//poiData.endPOIdata();
 
 		// create POI data overlay

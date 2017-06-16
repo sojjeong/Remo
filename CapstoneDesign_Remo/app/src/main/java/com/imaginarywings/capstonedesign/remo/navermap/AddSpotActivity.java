@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.JsonObject;
 import com.imaginarywings.capstonedesign.remo.R;
+import com.imaginarywings.capstonedesign.remo.model.PhotoSpotModel;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.async.http.body.FilePart;
 import com.koushikdutta.async.http.body.Part;
@@ -44,6 +45,8 @@ public class AddSpotActivity extends AppCompatActivity {
     private final String TAG = getClass().getSimpleName();
 
     public static Context mContext;
+    public static boolean mMarkerEnable;
+    public PhotoSpotModel mSpotModel;
     public LocationManager locationManager;
     private String mSelectedImagePath;
     public NGeoPoint mSavePoint;
@@ -55,8 +58,6 @@ public class AddSpotActivity extends AppCompatActivity {
     @BindView(R.id.id_ImgView_PhotoSpot) ImageView mPhotospotImage;
     @BindView(R.id.id_imgbtnSaveSpot) ImageButton mSaveSpot;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +66,7 @@ public class AddSpotActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mContext = this;
-
+        mMarkerEnable = false;
         locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
 
         //GPS ON/OFF 유무 확인
@@ -210,6 +211,11 @@ public class AddSpotActivity extends AppCompatActivity {
         else
             Toast.makeText(this, "잘못된 위치입니다. 다시 확인해보세요.", Toast.LENGTH_SHORT).show();
 
+        //포토스팟모델 생성
+        mSpotModel = new PhotoSpotModel(1, "TEST", "uuid", "test1", String.valueOf(mtext_SpotAddress.getText()),
+                mSelectedImagePath, mSavePoint.getLatitude(), mSavePoint.getLongitude());
+
+        //서버에 데이터 전송
         Ion.with(this)
                 .load(API_URL + "/spot")
                 .addMultipartParts(parts)
@@ -232,11 +238,14 @@ public class AddSpotActivity extends AppCompatActivity {
                                 Toast.makeText(AddSpotActivity.this, "업로드 성공", Toast.LENGTH_SHORT).show();
                                 Log.d(TAG, "onCompleted: " + result.get("data").toString());
                                 setResult(RESULT_OK);
-//                                finish();
+
+                                mMarkerEnable = true;
+                                finish();
                             }
                         }
                     }
                 });
+
     }
 
     //사진 uri 경로 얻어오기
@@ -247,5 +256,10 @@ public class AddSpotActivity extends AppCompatActivity {
         cursor.close();
 
         return path;
+    }
+
+    public PhotoSpotModel getSpotModel()
+    {
+        return mSpotModel;
     }
 }

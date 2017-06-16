@@ -12,16 +12,15 @@ import android.os.Parcelable;
 public class PhotoSpotModel implements Parcelable{
 
     //포토스팟 모델의 속성
-    private int id;
-    private String type;
-    private String aid;
-    private String subject;
-    private String address;
-    //private List<String> imgList;
-    private String imgSrc;
+    private int id;             //아이디
+    private String type;        //타입
+    private String aid;         //유저 아이디
+    private String subject;     //주제?
+    private String address;     //주소
+    private String imgSrc;      //이미지 url
 
-    private double latitude;
-    private double longitude;
+    private double latitude;    //위도
+    private double longitude;   //경도
 
     //생성자
     public PhotoSpotModel(int id, String type, String aid, String subject, String address, String imgSrc, double latitude, double longitude)

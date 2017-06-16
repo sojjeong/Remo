@@ -59,7 +59,8 @@ public class SpotDetailDialog extends DialogFragment {
         display.getSize(size);
 
         //Set the width of the dialog proportional to 75% of the screen width
-        window.setLayout((int)(size.x * 0.8), (int)(size.y * 0.8));
+        //window.setLayout((int)(size.x * 0.8), (int)(size.y * 0.8));
+        window.setLayout((int)(size.x * 0.8), (int)(size.y * 0.6));
         window.setGravity(Gravity.CENTER);
 
         //Call super onResume after sizing
@@ -73,7 +74,7 @@ public class SpotDetailDialog extends DialogFragment {
         ButterKnife.bind(this, rootView);
 
         mAdressText.setText(mSpotModel.getAddress());
-        mSubjectText.setText(mSpotModel.getSubject());
+        //mSubjectText.setText(mSpotModel.getSubject());
 
         Glide.with(this)
                 .load(mSpotModel.getImgSrc())
