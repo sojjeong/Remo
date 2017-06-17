@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <FrameLayout
@@ -31,19 +32,11 @@
             android:src="@drawable/logo"/>
     </FrameLayout>
 
-    <ScrollView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/images_rcv"
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_gravity="fill_horizontal"
-            android:id="@+id/images_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_column="2">
-
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

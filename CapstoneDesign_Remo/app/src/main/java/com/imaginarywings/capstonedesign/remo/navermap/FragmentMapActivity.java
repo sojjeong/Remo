@@ -25,6 +25,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -67,6 +68,8 @@ public class FragmentMapActivity extends FragmentActivity {
     public double latitude;     //위도
     public double longitude;    //경도
 
+    static String mUUID; //UUID
+
     //포토스팟 검색 SearchView
     @BindView(R.id.id_SpotSearch) EditText mSearchView;
 
@@ -106,6 +109,8 @@ public class FragmentMapActivity extends FragmentActivity {
         fabAddSpot.setOnClickListener(clickListener);
         fabMySpot.setOnClickListener(clickListener);
         fabMylocation.setOnClickListener(clickListener);
+
+        mUUID = GetDevicesUUID(this);
     }
 
     @Override
@@ -300,4 +305,12 @@ public class FragmentMapActivity extends FragmentActivity {
 
         return point;
     }
+
+    // UUID 받아오는 함수
+    private String GetDevicesUUID(Context mContext) {
+        TelephonyManager tManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        String deviceId = tManager.getDeviceId();
+        return deviceId;
+    }
+
 }
