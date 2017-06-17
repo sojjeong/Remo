@@ -906,8 +906,8 @@ int id fill_horizontal 0x7f0e0051
 int id fill_vertical 0x7f0e0047
 int id fixed 0x7f0e0060
 int id focusMarkerContainer 0x7f0e00c7
-int id fragment1 0x7f0e00bf
 int id fragment_add_spot 0x7f0e00ba
+int id fragment_photospot 0x7f0e00bf
 int id front 0x7f0e002f
 int id gallery_btn 0x7f0e00a1
 int id highest 0x7f0e003c
@@ -916,7 +916,7 @@ int id homeAsUp 0x7f0e001c
 int id icon 0x7f0e006a
 int id icon_group 0x7f0e00de
 int id icon_only 0x7f0e005c
-int id id_AddSpotMapView 0x7f0e00b9
+int id id_AddSpotMapView 0x7f0e00b8
 int id id_BtnCenterMarker 0x7f0e00bd
 int id id_CenterAddress 0x7f0e00bb
 int id id_ImgView_PhotoSpot 0x7f0e0098
@@ -943,7 +943,7 @@ int id list_item 0x7f0e0069
 int id lowest 0x7f0e003d
 int id mainFragment 0x7f0e00be
 int id map 0x7f0e00a6
-int id mapView 0x7f0e00b8
+int id mapView 0x7f0e00b9
 int id masked 0x7f0e00e6
 int id max1080p 0x7f0e003e
 int id max2160p 0x7f0e003f
@@ -1105,9 +1105,9 @@ int layout design_navigation_menu 0x7f04002c
 int layout design_navigation_menu_item 0x7f04002d
 int layout design_text_input_password_icon 0x7f04002e
 int layout dialog_spot_detail 0x7f04002f
-int layout fragment1 0x7f040030
-int layout fragment2 0x7f040031
-int layout fragment_add_spot 0x7f040032
+int layout fragment2 0x7f040030
+int layout fragment_add_spot 0x7f040031
+int layout fragment_photospot 0x7f040032
 int layout fragmentactivity_add_spot 0x7f040033
 int layout framents 0x7f040034
 int layout item_sample_image 0x7f040035

@@ -8,8 +8,8 @@
 
 	<!--현재 레이아웃에 프래그먼트가 들어갈 영역-->
 	<fragment
-		android:id="@+id/fragment1"
-		android:name="com.imaginarywings.capstonedesign.remo.navermap.Fragment1"
+		android:id="@+id/fragment_photospot"
+		android:name="com.imaginarywings.capstonedesign.remo.navermap.PhotospotFragment"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:layout_alignParentTop="true"

@@ -31,7 +31,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.imaginarywings.capstonedesign.remo.R;
@@ -60,7 +59,7 @@ public class FragmentMapActivity extends FragmentActivity {
     boolean isOpen = false;
 
     //포토스팟 프래그먼트 내부 변수 접근
-    public Fragment1 PhotospotMap;
+    public PhotospotFragment PhotospotMap;
 
     //다른 액티비티에서 FragmentMapActivity 함수를 사용하기 위한 스태틱 변수
     public static Context mContext;
@@ -85,11 +84,11 @@ public class FragmentMapActivity extends FragmentActivity {
         ButterKnife.bind(FragmentMapActivity.this);
 
         //------------------------------------------------------------
-        Fragment1 fragment1 = new Fragment1();
-        fragment1.setArguments(new Bundle());
+        PhotospotFragment photospotFragment = new PhotospotFragment();
+        photospotFragment.setArguments(new Bundle());
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.fragment1, fragment1);
+        ft.add(R.id.fragment_photospot, photospotFragment);
         //------------------------------------------------------------
 
         //fab 애니메이션
@@ -118,7 +117,7 @@ public class FragmentMapActivity extends FragmentActivity {
         super.onResume();
 
         //프래그먼트1에 있는 함수 호출을 위해 먼저 생성함.
-        PhotospotMap = (Fragment1) getSupportFragmentManager().findFragmentById(R.id.fragment1);
+        PhotospotMap = (PhotospotFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_photospot);
     }
 
     @Override
@@ -149,7 +148,7 @@ public class FragmentMapActivity extends FragmentActivity {
     public void btnSearchClick(){
 
         mSearchView.clearFocus();
-        String Query = mSearchView.toString();
+        String Query = String.valueOf(mSearchView.getText());
 
         if(Query != null)
         {

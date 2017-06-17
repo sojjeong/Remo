@@ -3435,8 +3435,8 @@ containing a value of this type.
         public static final int fill_vertical=0x7f0e0047;
         public static final int fixed=0x7f0e0060;
         public static final int focusMarkerContainer=0x7f0e00c7;
-        public static final int fragment1=0x7f0e00bf;
         public static final int fragment_add_spot=0x7f0e00ba;
+        public static final int fragment_photospot=0x7f0e00bf;
         public static final int front=0x7f0e002f;
         public static final int gallery_btn=0x7f0e00a1;
         public static final int highest=0x7f0e003c;
@@ -3445,7 +3445,7 @@ containing a value of this type.
         public static final int icon=0x7f0e006a;
         public static final int icon_group=0x7f0e00de;
         public static final int icon_only=0x7f0e005c;
-        public static final int id_AddSpotMapView=0x7f0e00b9;
+        public static final int id_AddSpotMapView=0x7f0e00b8;
         public static final int id_BtnCenterMarker=0x7f0e00bd;
         public static final int id_CenterAddress=0x7f0e00bb;
         public static final int id_ImgView_PhotoSpot=0x7f0e0098;
@@ -3472,7 +3472,7 @@ containing a value of this type.
         public static final int lowest=0x7f0e003d;
         public static final int mainFragment=0x7f0e00be;
         public static final int map=0x7f0e00a6;
-        public static final int mapView=0x7f0e00b8;
+        public static final int mapView=0x7f0e00b9;
         public static final int masked=0x7f0e00e6;
         public static final int max1080p=0x7f0e003e;
         public static final int max2160p=0x7f0e003f;
@@ -3638,9 +3638,9 @@ containing a value of this type.
         public static final int design_navigation_menu_item=0x7f04002d;
         public static final int design_text_input_password_icon=0x7f04002e;
         public static final int dialog_spot_detail=0x7f04002f;
-        public static final int fragment1=0x7f040030;
-        public static final int fragment2=0x7f040031;
-        public static final int fragment_add_spot=0x7f040032;
+        public static final int fragment2=0x7f040030;
+        public static final int fragment_add_spot=0x7f040031;
+        public static final int fragment_photospot=0x7f040032;
         public static final int fragmentactivity_add_spot=0x7f040033;
         public static final int framents=0x7f040034;
         public static final int item_sample_image=0x7f040035;

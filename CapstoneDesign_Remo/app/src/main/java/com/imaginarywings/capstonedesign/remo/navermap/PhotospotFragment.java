@@ -45,7 +45,7 @@ import io.nlopez.smartlocation.SmartLocation;
  * 포토스팟 액티비티x, Fragment1의 클래스 이름을 나중에 바꿔줘야함.(현재 혼동옴)
  */
 
-public class Fragment1 extends NMapFragment {
+public class PhotospotFragment extends NMapFragment {
 
 	//네이버맵 클라이언트 아이디(API키)
 	private final String CLIENT_ID = "xQ50GyWn_EU3eQE4A1sL";
@@ -78,7 +78,7 @@ public class Fragment1 extends NMapFragment {
 
 	public static Context mContext;
 
-	public Fragment1()
+	public PhotospotFragment()
 	{
 
 	}
@@ -96,7 +96,7 @@ public class Fragment1 extends NMapFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment1, container, false);
+		View view = inflater.inflate(R.layout.fragment_photospot, container, false);
 		return view;
 	}
 
