@@ -203,7 +203,8 @@ public class AddSpotActivity extends AppCompatActivity {
         parts.add(new StringPart("spot_name", "임시이름"));
 
         //uuid
-        parts.add(new StringPart("user_uuid", "사용자 uuid"));
+        String uuid = ((FragmentMapActivity) FragmentMapActivity.mContext).mUUID;
+        parts.add(new StringPart("user_uuid", uuid));
 
         //위,경도
         if(mSavePoint != null)

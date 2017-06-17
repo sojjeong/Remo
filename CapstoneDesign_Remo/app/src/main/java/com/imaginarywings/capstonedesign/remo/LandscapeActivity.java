@@ -2,21 +2,18 @@ package com.imaginarywings.capstonedesign.remo;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
+import com.imaginarywings.capstonedesign.remo.model.SampleImageModel;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
@@ -26,7 +23,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.imaginarywings.capstonedesign.remo.Consts.API_URL;
-import static com.imaginarywings.capstonedesign.remo.Consts.DEFAULT_URL;
 
 /**
  * Created by S.JJ on 2017-04-05.
@@ -35,7 +31,8 @@ import static com.imaginarywings.capstonedesign.remo.Consts.DEFAULT_URL;
 public class LandscapeActivity extends Activity {
     private final String TAG = getClass().getSimpleName();
 
-    @BindView(R.id.images_layout) LinearLayout mImagesLayout;
+    @BindView(R.id.images_rcv) RecyclerView mImagesRcv;
+    private SampleViewAdapter mAdapter;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +41,13 @@ public class LandscapeActivity extends Activity {
 
         //카메라, 저장소 퍼미션 요청
         checkCameraPermissions();
+
+        mAdapter = new SampleViewAdapter(this);
+        mImagesRcv.setHasFixedSize(true);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+
+        mImagesRcv.setLayoutManager(new GridLayoutManager(this, 2));
+        mImagesRcv.setAdapter(mAdapter);
     }
 
     //카메라 퍼미션 요청
@@ -91,24 +95,10 @@ public class LandscapeActivity extends Activity {
                                 JsonArray imageArray = result.getAsJsonArray("data");
                                 for (int i=0; i<imageArray.size(); i++) {
                                     final JsonObject object = imageArray.get(i).getAsJsonObject();
-                                    ImageView image = new ImageView(LandscapeActivity.this);
-                                    image.setLayoutParams(new LinearLayout.LayoutParams(convertDpToPx(150), ViewGroup.LayoutParams.WRAP_CONTENT));
-                                    image.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    image.setAdjustViewBounds(true);
-                                    image.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Intent cameraIntent = new Intent(LandscapeActivity.this, CameraActivity.class);
-                                            cameraIntent.putExtra("image", object.get("cam_guideline_url").getAsString());
-                                            startActivity(cameraIntent);
-                                        }
-                                    });
-                                    String fullImageUrl = DEFAULT_URL + object.get("cam_photo_url").getAsString();
-                                    Glide.with(LandscapeActivity.this)
-                                            .load(fullImageUrl)
-                                            .thumbnail(0.1f)
-                                            .into(image);
-                                    mImagesLayout.addView(image);
+                                    SampleImageModel newModel = new SampleImageModel();
+                                    newModel.setGuideUrl(object.get("cam_guideline_url").getAsString());
+                                    newModel.setSampleUrl(object.get("cam_photo_url").getAsString());
+                                    mAdapter.addImage(newModel);
                                 }
                             }
                         }
