@@ -1,6 +1,7 @@
 package com.imaginarywings.capstonedesign.remo.navermap;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,11 +34,6 @@ public class AddSpotFragment extends NMapFragment {
     private final String CLIENT_ID = "xQ50GyWn_EU3eQE4A1sL";
     private static final boolean DEBUG = false;
     private static final String LOG_TAG = "AddSpotFragment";
-
-    //포토스팟 다이얼로그 창 데이터 해시 테이블?
-    private static final String TAG_SPOT_DETAIL_DIALOG = "SpotDetailDialog";
-
-    private static final int REQUEST_LOCATION_ENABLE = 717;
 
     //현재 클래스명 얻어오기
     private final String TAG = getClass().getSimpleName();
@@ -89,7 +85,6 @@ public class AddSpotFragment extends NMapFragment {
         mMapContext.setupMapView(mMapView);
 
         mMapView.setOnMapStateChangeListener(mStateChangeListener);
-        mMapView.setOnMapViewTouchEventListener(mTouchEvnetListener);
 
         //자세한 확대 (수치는 적절히 조정하도록)
         mMapView.setScalingFactor(2.0f);
@@ -111,6 +106,7 @@ public class AddSpotFragment extends NMapFragment {
         //NMapView를 생성하면서 자동으로 컨트롤러도 생성되므로 NMapView로부터 얻어온다.
         mMapController = mMapView.getMapController();
 
+
     }
 
     @Override
@@ -123,6 +119,11 @@ public class AddSpotFragment extends NMapFragment {
     public void onResume() {
         super.onResume();
         mMapContext.onResume();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -154,7 +155,9 @@ public class AddSpotFragment extends NMapFragment {
             if(nMapError == null)
             {
                 // 초기 위치 설정
-                mMapController.setMapCenter(new NGeoPoint(127.131342, 35.847532), 11);
+                String address = String.valueOf(((AddSpotActivity)AddSpotActivity.mContext).mEditText_AddressSearch.getText());
+                NGeoPoint point = ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertLatLng(address);
+                mMapController.setMapCenter(point, 11);     //NGeopoint , 축척레벨(1~14)
 
             } else {
                 Toast.makeText(getActivity(), "지도를 초기화하는데 실패하였습니다.\n message: " + nMapError.message, Toast.LENGTH_SHORT).show();
@@ -197,166 +200,4 @@ public class AddSpotFragment extends NMapFragment {
 
         }
     };
-
-    private NMapView.OnMapViewTouchEventListener mTouchEvnetListener = new NMapView.OnMapViewTouchEventListener() {
-        @Override
-        public void onLongPress(NMapView nMapView, MotionEvent motionEvent) {
-
-        }
-
-        @Override
-        public void onLongPressCanceled(NMapView nMapView) {
-
-        }
-
-        @Override
-        public void onTouchDown(NMapView nMapView, MotionEvent motionEvent) {
-
-        }
-
-        @Override
-        public void onTouchUp(NMapView nMapView, MotionEvent motionEvent) {
-
-        }
-
-        @Override
-        public void onScroll(NMapView nMapView, MotionEvent motionEvent, MotionEvent motionEvent1) {
-
-        }
-
-        @Override
-        public void onSingleTapUp(NMapView nMapView, MotionEvent motionEvent) {
-
-        }
-    };
-
-    /**
-     * 화면 중심 좌표 get함수
-     */
-    public String getCenterAddress()
-    {
-        return mStringCenterAddress;
-    }
-
-    /**
-     * 마커 추가하기
-     */
-    private void testPOIdataOverlay() {
-
-        // Markers for POI item
-        int markerId = NMapPOIflagType.PIN;
-
-        // set POI data
-        NMapPOIdata poiData = new NMapPOIdata(2, mMapViewerResourceProvider);
-        poiData.beginPOIdata(2);
-        NMapPOIitem item = poiData.addPOIitem(127.0630205, 37.5091300, "Pizza 777-111", markerId, 0);
-        item.setRightAccessory(true, NMapPOIflagType.CLICKABLE_ARROW);
-        poiData.addPOIitem(127.061, 37.51, "Pizza 123-456", markerId, 0);
-        poiData.endPOIdata();
-
-        // create POI data overlay
-        NMapPOIdataOverlay poiDataOverlay = mOverlayManager.createPOIdataOverlay(poiData, null);
-
-        // set event listener to the overlay
-        poiDataOverlay.setOnStateChangeListener(onPOIdataStateChangeListener);
-
-        // select an item
-        poiDataOverlay.selectPOIitem(0, true);
-
-        // show all POI data
-        //poiDataOverlay.showAllPOIdata(0);
-    }
-
-    /* POI data State Change Listener*/
-    private final NMapPOIdataOverlay.OnStateChangeListener onPOIdataStateChangeListener = new NMapPOIdataOverlay.OnStateChangeListener() {
-
-        @Override
-        public void onCalloutClick(NMapPOIdataOverlay poiDataOverlay, NMapPOIitem item) {
-            if (DEBUG) {
-                Log.i(LOG_TAG, "onCalloutClick: title=" + item.getTitle());
-            }
-
-            // [[TEMP]] handle a click event of the callout
-            Toast.makeText(getActivity(), "onCalloutClick: " + item.getTitle(), Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        public void onFocusChanged(NMapPOIdataOverlay poiDataOverlay, NMapPOIitem item) {
-            if (DEBUG) {
-                if (item != null) {
-                    Log.i(LOG_TAG, "onFocusChanged: " + item.toString());
-                } else {
-                    Log.i(LOG_TAG, "onFocusChanged: ");
-                }
-            }
-        }
-    };
-
-    /*
-    private void testFloatingPOIdataOverlay() {
-        // Markers for POI item
-        int marker1 = NMapPOIflagType.PIN;
-
-        // set POI data
-        NMapPOIdata poiData = new NMapPOIdata(1, mMapViewerResourceProvider);
-        poiData.beginPOIdata(1);
-        NMapPOIitem item = poiData.addPOIitem(null, "Touch & Drag to Move", marker1, 0);
-        if (item != null) {
-            // initialize location to the center of the map view.
-            item.setPoint(mMapController.getMapCenter());
-            // set floating mode
-            item.setFloatingMode(NMapPOIitem.FLOATING_TOUCH | NMapPOIitem.FLOATING_DRAG);
-            // show right button on callout
-            item.setRightButton(true);
-
-            mFloatingPOIitem = item;
-        }
-        poiData.endPOIdata();
-
-        // create POI data overlay
-        NMapPOIdataOverlay poiDataOverlay = mOverlayManager.createPOIdataOverlay(poiData, null);
-        if (poiDataOverlay != null) {
-            poiDataOverlay.setOnFloatingItemChangeListener(onPOIdataFloatingItemChangeListener);
-
-            // set event listener to the overlay
-            poiDataOverlay.setOnStateChangeListener(onPOIdataStateChangeListener);
-
-            poiDataOverlay.selectPOIitem(0, false);
-
-            mFloatingPOIdataOverlay = poiDataOverlay;
-        }
-    }
-    */
-
-    /* NMapDataProvider Listener */
-    /*
-    private final NMapActivity.OnDataProviderListener onDataProviderListener = new NMapActivity.OnDataProviderListener() {
-
-        @Override
-        public void onReverseGeocoderResponse(NMapPlacemark placeMark, NMapError errInfo) {
-
-            if (DEBUG) {
-                Log.i(LOG_TAG, "onReverseGeocoderResponse: placeMark="
-                        + ((placeMark != null) ? placeMark.toString() : null));
-            }
-
-            if (errInfo != null) {
-                Log.e(LOG_TAG, "Failed to findPlacemarkAtLocation: error=" + errInfo.toString());
-
-                Toast.makeText(NMapViewer.this, errInfo.toString(), Toast.LENGTH_LONG).show();
-                return;
-            }
-
-            if (mFloatingPOIitem != null && mFloatingPOIdataOverlay != null) {
-                mFloatingPOIdataOverlay.deselectFocusedPOIitem();
-
-                if (placeMark != null) {
-                    mFloatingPOIitem.setTitle(placeMark.toString());
-                }
-                mFloatingPOIdataOverlay.selectPOIitemBy(mFloatingPOIitem.getId(), false);
-            }
-        }
-
-    };
-    */
 }

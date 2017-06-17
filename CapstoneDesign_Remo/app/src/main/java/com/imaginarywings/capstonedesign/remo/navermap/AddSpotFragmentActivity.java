@@ -37,11 +37,6 @@ public class AddSpotFragmentActivity extends FragmentActivity {
 
     public static Context mContext;
 
-    public double latitude;     //위도
-    public double longitude;    //경도
-
-    public String mCenterAddress;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -31,8 +31,8 @@ MERGED from [com.flurgle:camerakit:0.9.17] C:\Users\tip90\.android\build-cache\e
 		ADDED from C:\Users\tip90\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:11:22-62
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\tip90\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:14:5-67
-MERGED from [com.koushikdutta.ion:ion:2.1.9] C:\Users\tip90\.android\build-cache\ec4e7bbb6f2fe1fe4b3df09b259658b5bc93b517\output\AndroidManifest.xml:11:5-67
-MERGED from [com.koushikdutta.async:androidasync:2.1.9] C:\Users\tip90\.android\build-cache\d8f19bb67bcbd4ff002898fe31418b944aa557a7\output\AndroidManifest.xml:11:5-67
+MERGED from [com.koushikdutta.ion:ion:2.2.0] C:\Users\tip90\.android\build-cache\5cd2d719366c20e86fefa72451518ff778d0afe8\output\AndroidManifest.xml:11:5-67
+MERGED from [com.koushikdutta.async:androidasync:2.2.0] C:\Users\tip90\.android\build-cache\27f209da4888dbc20a458f6619a3afb7bd11cff3\output\AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from C:\Users\tip90\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:14:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
@@ -76,8 +76,8 @@ MERGED from [com.google.android.gms:play-services-location:10.2.0] C:\Users\tip9
 MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\tip90\.android\build-cache\e1ee6de0237465feca6c13589728990e38815eef\output\AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\tip90\.android\build-cache\0cf0cee6acfa3d4c90a7088ab383f836831a4d01\output\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\tip90\.android\build-cache\c9df82054f0df7b4dd57d9934863978a0fb4dfba\output\AndroidManifest.xml:19:5-21:19
-MERGED from [com.koushikdutta.ion:ion:2.1.9] C:\Users\tip90\.android\build-cache\ec4e7bbb6f2fe1fe4b3df09b259658b5bc93b517\output\AndroidManifest.xml:13:5-14:19
-MERGED from [com.koushikdutta.async:androidasync:2.1.9] C:\Users\tip90\.android\build-cache\d8f19bb67bcbd4ff002898fe31418b944aa557a7\output\AndroidManifest.xml:13:5-14:19
+MERGED from [com.koushikdutta.ion:ion:2.2.0] C:\Users\tip90\.android\build-cache\5cd2d719366c20e86fefa72451518ff778d0afe8\output\AndroidManifest.xml:13:5-14:19
+MERGED from [com.koushikdutta.async:androidasync:2.2.0] C:\Users\tip90\.android\build-cache\27f209da4888dbc20a458f6619a3afb7bd11cff3\output\AndroidManifest.xml:13:5-14:19
 MERGED from [com.android.support:design:25.3.1] C:\Users\tip90\.android\build-cache\7e9186953f1f16f80036b5754590707898cd6f19\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\tip90\.android\build-cache\5530013141fc556eaf7f8c94c42e603a26c41030\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\tip90\.android\build-cache\519f4fee761be4e48cf5b71a7afa4c93a826c809\output\AndroidManifest.xml:26:5-20
@@ -179,8 +179,8 @@ MERGED from [com.google.android.gms:play-services-location:10.2.0] C:\Users\tip9
 MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\tip90\.android\build-cache\e1ee6de0237465feca6c13589728990e38815eef\output\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\tip90\.android\build-cache\0cf0cee6acfa3d4c90a7088ab383f836831a4d01\output\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\tip90\.android\build-cache\c9df82054f0df7b4dd57d9934863978a0fb4dfba\output\AndroidManifest.xml:17:5-43
-MERGED from [com.koushikdutta.ion:ion:2.1.9] C:\Users\tip90\.android\build-cache\ec4e7bbb6f2fe1fe4b3df09b259658b5bc93b517\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.koushikdutta.async:androidasync:2.1.9] C:\Users\tip90\.android\build-cache\d8f19bb67bcbd4ff002898fe31418b944aa557a7\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.koushikdutta.ion:ion:2.2.0] C:\Users\tip90\.android\build-cache\5cd2d719366c20e86fefa72451518ff778d0afe8\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.koushikdutta.async:androidasync:2.2.0] C:\Users\tip90\.android\build-cache\27f209da4888dbc20a458f6619a3afb7bd11cff3\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:25.3.1] C:\Users\tip90\.android\build-cache\7e9186953f1f16f80036b5754590707898cd6f19\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\tip90\.android\build-cache\5530013141fc556eaf7f8c94c42e603a26c41030\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\tip90\.android\build-cache\519f4fee761be4e48cf5b71a7afa4c93a826c809\output\AndroidManifest.xml:20:5-44

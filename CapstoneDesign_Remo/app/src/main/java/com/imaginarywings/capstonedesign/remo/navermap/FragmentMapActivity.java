@@ -29,6 +29,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -52,8 +53,6 @@ import butterknife.OnClick;
 public class FragmentMapActivity extends FragmentActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final String CLIENT_ID = "xQ50GyWn_EU3eQE4A1sL";
-    private final String CLIENT_SCERET = "3dKV3kxpZb";
 
     Animation FabOpen, FabClose, FabRClockwise, FabRanticlockWise;
     private FloatingActionButton fabMain, fabAddSpot, fabMySpot, fabMylocation;
@@ -69,7 +68,7 @@ public class FragmentMapActivity extends FragmentActivity {
     public double longitude;    //경도
 
     //포토스팟 검색 SearchView
-    @BindView(R.id.id_SpotSearch) SearchView mSearchView;
+    @BindView(R.id.id_SpotSearch) EditText mSearchView;
 
     /** Called when the activity is first created. */
     @Override
@@ -145,7 +144,7 @@ public class FragmentMapActivity extends FragmentActivity {
     public void btnSearchClick(){
 
         mSearchView.clearFocus();
-        String Query = mSearchView.getQuery().toString();
+        String Query = mSearchView.toString();
 
         if(Query != null)
         {

@@ -41,6 +41,7 @@ import static com.imaginarywings.capstonedesign.remo.Consts.API_URL;
 public class AddSpotActivity extends AppCompatActivity {
 
     private final int REQUEST_SELECT_PHOTO = 1004;
+    private final int REQUEST_SPOT_SEARCH = 1005;
 
     private final String TAG = getClass().getSimpleName();
 
@@ -117,6 +118,7 @@ public class AddSpotActivity extends AppCompatActivity {
                 mSelectedImagePath = null;
             }
         }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -142,8 +144,6 @@ public class AddSpotActivity extends AppCompatActivity {
     //지도 검색
     @OnClick(R.id.btn_AddSpot_Search)
     public void selecteBtnAddSpotSearch() {
-        Intent AddSpotMap = new Intent(getApplicationContext(), AddSpotFragmentActivity.class);
-
         AddSpotFragment fragment = (AddSpotFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_add_spot);
 
         NGeoPoint nPoint;
@@ -163,7 +163,10 @@ public class AddSpotActivity extends AppCompatActivity {
             Log.e("위도", latitude);
             Log.e("경도", longitude);
 
-            startActivity(AddSpotMap);
+            Intent AddSpotMap = new Intent(getApplicationContext(), AddSpotFragmentActivity.class);
+            AddSpotMap.putExtra("result_point", latitude);
+            setResult(REQUEST_SPOT_SEARCH, AddSpotMap);
+            startActivityForResult(AddSpotMap, REQUEST_SPOT_SEARCH);
         }
         else
         {

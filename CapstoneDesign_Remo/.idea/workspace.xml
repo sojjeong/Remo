@@ -16,93 +16,31 @@
   </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java" />
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java" line="197" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java" line="200" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ddeee26-b3ff-4ffd-b400-04f58fbf5c9a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LocalSearchActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LocalSearchAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/PhotospotActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/model/LocalSearchItemModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/model/LocalSearchModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_local_search.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_local_search.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/imaginarywings/capstonedesign/remo/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/imaginarywings/capstonedesign/remo/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-af.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-af.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-am.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-am.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ar.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ar.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bg.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bg.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ca.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ca.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-cs.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-cs.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-da.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-da.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-de.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-de.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-el.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-el.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-en-rGB.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-en-rGB.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es-rUS.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es-rUS.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fa.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fa.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr-rCA.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr-rCA.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hu.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-in.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-in.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-it.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-it.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-iw.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-iw.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ja.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ja.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ko.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ko.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lt.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lt.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lv.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lv.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nb.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nb.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rBR.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rBR.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rPT.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rPT.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ro.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ro.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ru.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ru.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sk.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sk.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sv.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sv.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sw.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sw.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-th.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-th.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-uk.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-uk.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-vi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-vi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rCN.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rCN.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rHK.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rHK.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rTW.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rTW.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zu.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/color.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/color.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/SpotDetailDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/SpotDetailDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/model/PhotoSpotModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/model/PhotoSpotModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/Fragment1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/Fragment1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragmentActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragmentActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/FragmentMapActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/FragmentMapActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_spot.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_spot.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_spot_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_spot_detail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/framents.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/framents.xml" />
     </list>
     <ignored path="Remo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,6 +53,26 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="FragmentMapActivity.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/FragmentMapActivity.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="700">
+                    <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsData">
@@ -134,39 +92,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dialog_spot_detail.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_spot_detail.xml">
+      <file leaf-file-name="framents.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/framents.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        </entry>
+      </file>
+      <file leaf-file-name="activity_add_spot.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_spot.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_add_spot.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_add_spot.xml">
-          <provider editor-type-id="android-designer2">
+          <provider selected="true" editor-type-id="android-designer2">
             <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpotDetailDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/SpotDetailDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -316,6 +264,11 @@
                 <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="deviceCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.koushikdutta.ion:ion:2.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComKoushikduttaIonIon220Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays all dependencies declared in root project 'CapstoneDesign_Remo'." />
@@ -718,6 +671,11 @@
                 <option name="name" value="assembleDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.koushikdutta.async:androidasync:2.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComKoushikduttaAsyncAndroidasync220Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processDebugJavaRes" />
               </ExternalTaskPojo>
@@ -771,11 +729,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="generateDebugResValues" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.koushikdutta.ion:ion:2.1.9" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComKoushikduttaIonIon219Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all checks." />
@@ -923,11 +876,6 @@
                 <option name="description" value="Prepare com.google.android.gms:play-services-basement:10.2.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBasement1020Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.koushikdutta.async:androidasync:2.1.9" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComKoushikduttaAsyncAndroidasync219Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support.test:exposed-instrumentation-api-publish:0.5" />
@@ -1110,6 +1058,11 @@
                 <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="deviceCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.koushikdutta.ion:ion:2.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComKoushikduttaIonIon220Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays all dependencies declared in project ':app'." />
@@ -1507,6 +1460,11 @@
                 <option name="name" value="assembleDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.koushikdutta.async:androidasync:2.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComKoushikduttaAsyncAndroidasync220Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="processDebugJavaRes" />
               </ExternalTaskPojo>
@@ -1560,11 +1518,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="generateDebugResValues" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.koushikdutta.ion:ion:2.1.9" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComKoushikduttaIonIon219Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all checks." />
@@ -1712,11 +1665,6 @@
                 <option name="description" value="Prepare com.google.android.gms:play-services-basement:10.2.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBasement1020Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.koushikdutta.async:androidasync:2.1.9" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComKoushikduttaAsyncAndroidasync219Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support.test:exposed-instrumentation-api-publish:0.5" />
@@ -2203,7 +2151,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/PeopleActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_people.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/CameraActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/FragmentMapActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/Consts.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LandscapeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_landscape.xml" />
@@ -2211,17 +2158,18 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/Fragment2.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragmentactivity_add_spot.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/framents.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragmentActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/model/PhotoSpotModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/PhotospotActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LocalSearchAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_spot.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_spot_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/SpotDetailDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/Fragment1.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragmentActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/FragmentMapActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_spot.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/framents.xml" />
       </list>
     </option>
   </component>
@@ -2275,6 +2223,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2378,37 +2332,9 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="remo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneDesign_Remo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2418,7 +2344,7 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="ENU7N15B12010168" />
-    <property name="last_opened_file_path" value="D:/AndroidWorkspace/CapstoneDesign_Remo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ScreenshotViewer.SavePath" value="D:/" />
     <property name="DEBUGGABLE_DEVICE" value="emulator-5554" />
     <property name="DEBUGGABLE_PROCESS" value="com.imaginarywings.capstonedesign.remo" />
@@ -2828,7 +2754,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32589287" sideWeight="0.49562362" order="6" side_tool="false" content_ui="tabs" />
@@ -2847,7 +2773,6 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29017857" sideWeight="0.51119405" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19349681" sideWeight="0.48756218" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20982143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20948827" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2861,6 +2786,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20982143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -2899,7 +2825,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/p01.jpg" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/p02.jpg" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/p03.jpg" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/p04.jpg" />
@@ -3065,25 +2990,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1660">
-          <caret line="173" column="66" selection-start-line="173" selection-start-column="66" selection-end-line="173" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/framents.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment1.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -3095,30 +3001,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/PhotospotActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/PhotospotActivity.java" />
     <entry file="jar://$USER_HOME$/.android/build-cache/4eddb258dc205dbbd9b2f1f624bbcfbdebc1f7ec/output/jars/classes.jar!/com/nhn/android/maps/overlay/NMapPOIdata.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="152" column="23" selection-start-line="152" selection-start-column="23" selection-end-line="152" selection-end-column="23" />
-          <folding>
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/FragmentMapActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="212" column="42" selection-start-line="212" selection-start-column="42" selection-end-line="212" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3139,80 +3026,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1460">
           <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/Fragment2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LocalSearchAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LocalSearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_local_search.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="229" column="32" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragmentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_local_search.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LocalSearchAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/LocalSearchActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_local_search.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_local_search.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragmentactivity_add_spot.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1160">
@@ -3224,10 +3058,28 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_spot.xml">
+    <entry file="jar://$USER_HOME$/.android/build-cache/4eddb258dc205dbbd9b2f1f624bbcfbdebc1f7ec/output/jars/classes.jar!/com/nhn/android/maps/overlay/NMapPOIitem.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+        <state relative-caret-position="313">
+          <caret line="158" column="18" selection-start-line="158" selection-start-column="18" selection-end-line="158" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/Fragment1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="328" column="63" selection-start-line="328" selection-start-column="63" selection-end-line="328" selection-end-column="63" />
+          <folding>
+            <element signature="e#6699#7598#0" expanded="false" />
+            <element signature="e#7597#7598#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_spot_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -3248,38 +3100,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/SpotDetailDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
+        <state relative-caret-position="798">
           <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.android/build-cache/4eddb258dc205dbbd9b2f1f624bbcfbdebc1f7ec/output/jars/classes.jar!/com/nhn/android/maps/overlay/NMapPOIitem.class">
+    <entry file="jar://$USER_HOME$/.android/build-cache/4eddb258dc205dbbd9b2f1f624bbcfbdebc1f7ec/output/jars/classes.jar!/com/nhn/android/maps/NMapController.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="158" column="18" selection-start-line="158" selection-start-column="18" selection-end-line="158" selection-end-column="18" />
+        <state relative-caret-position="289">
+          <caret line="559" column="16" selection-start-line="559" selection-start-column="16" selection-end-line="559" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="86" column="67" selection-start-line="86" selection-start-column="67" selection-end-line="86" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotFragmentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/AddSpotActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <element signature="e#5009#5010#0" expanded="true" />
-            <element signature="e#5038#5039#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/Fragment1.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/imaginarywings/capstonedesign/remo/navermap/FragmentMapActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="328" column="63" selection-start-line="328" selection-start-column="63" selection-end-line="328" selection-end-column="63" />
-          <folding>
-            <element signature="e#6699#7598#0" expanded="true" />
-            <element signature="e#7597#7598#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="700">
+          <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_spot_detail.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_spot.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/framents.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        <state relative-caret-position="488">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
           <folding />
         </state>
       </provider>

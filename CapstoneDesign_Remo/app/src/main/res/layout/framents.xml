@@ -12,9 +12,8 @@
 		android:name="com.imaginarywings.capstonedesign.remo.navermap.Fragment1"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:layout_alignParentStart="true"
-		android:layout_alignParentBottom="true"
-		android:layout_alignParentTop="true" />
+		android:layout_alignParentTop="true"
+		android:layout_alignParentStart="true" />
 
     <!-- 대표 플로팅 버튼 -->
 	<android.support.design.widget.FloatingActionButton
@@ -73,23 +72,27 @@
 		android:layout_above="@+id/fab_myspot"
 		android:layout_alignStart="@+id/fab_myspot" />
 
-	<SearchView
-        android:id="@+id/id_SpotSearch"
+	<EditText
+		android:id="@+id/id_SpotSearch"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
+		android:layout_alignParentStart="true"
+		android:layout_alignParentTop="true"
 		android:background="@android:drawable/dialog_holo_light_frame"
-		android:iconifiedByDefault="false"
-		android:inputType="text"
 		android:clickable="true"
-		android:layout_alignParentTop="true">
+		android:hint="주소를 입력하세요."
+		android:iconifiedByDefault="false"
+		android:inputType="text">
 
-	</SearchView>
+	</EditText>
 
 	<Button
 		android:id="@+id/btn_MapSearch"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="검색"
-		android:layout_alignParentEnd="true" />
+		android:layout_width="40dp"
+		android:layout_height="45dp"
+		android:layout_alignBaseline="@+id/id_SpotSearch"
+		android:layout_alignBottom="@+id/id_SpotSearch"
+		android:layout_alignEnd="@+id/fab_mylocation"
+		android:background="@android:drawable/ic_menu_search" />
 
 </RelativeLayout>
