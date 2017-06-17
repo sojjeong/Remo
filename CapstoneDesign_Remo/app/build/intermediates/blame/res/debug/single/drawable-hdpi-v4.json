@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
-        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
-    },
-    {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
@@ -68,12 +68,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\googleg_standard_color_18.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1b20a0caa143a206aaf2d0cf0e5ea78a1e6faa51\\output\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
-    },
-    {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\googleg_standard_color_18.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1b20a0caa143a206aaf2d0cf0e5ea78a1e6faa51\\output\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
     },
     {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
@@ -116,12 +116,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
-    },
-    {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",

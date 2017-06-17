@@ -66,12 +66,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        <activity android:name="com.imaginarywings.capstonedesign.remo.MainActivity" >
+        <activity android:name="com.imaginarywings.capstonedesign.remo.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.imaginarywings.capstonedesign.remo.MainActivity"
+            android:label="Main" >
         </activity>
         <activity
             android:name="com.imaginarywings.capstonedesign.remo.PeopleActivity"

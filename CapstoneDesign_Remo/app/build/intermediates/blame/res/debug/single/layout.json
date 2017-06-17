@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
-        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\37f15e9be4da89808b0561111df80f27bdc50d6b\\output\\res\\layout\\design_layout_tab_icon.xml"
-    },
-    {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\37f15e9be4da89808b0561111df80f27bdc50d6b\\output\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
@@ -20,12 +20,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\splash.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\layout\\splash.xml"
     },
     {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_people.xml",
@@ -482,6 +486,10 @@
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_photospot.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\layout\\fragment_photospot.xml"
     },
     {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",

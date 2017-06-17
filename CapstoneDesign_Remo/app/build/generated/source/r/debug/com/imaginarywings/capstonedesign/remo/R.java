@@ -3261,13 +3261,13 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020051;
         public static final int abc_vector_test=0x7f020052;
         public static final int avd_hide_password=0x7f020053;
-        public static final int avd_hide_password_1=0x7f0200a0;
-        public static final int avd_hide_password_2=0x7f0200a1;
-        public static final int avd_hide_password_3=0x7f0200a2;
+        public static final int avd_hide_password_1=0x7f0200a1;
+        public static final int avd_hide_password_2=0x7f0200a2;
+        public static final int avd_hide_password_3=0x7f0200a3;
         public static final int avd_show_password=0x7f020054;
-        public static final int avd_show_password_1=0x7f0200a3;
-        public static final int avd_show_password_2=0x7f0200a4;
-        public static final int avd_show_password_3=0x7f0200a5;
+        public static final int avd_show_password_1=0x7f0200a4;
+        public static final int avd_show_password_2=0x7f0200a5;
+        public static final int avd_show_password_3=0x7f0200a6;
         public static final int background=0x7f020055;
         public static final int bg_speech=0x7f020056;
         public static final int black=0x7f020057;
@@ -3325,8 +3325,8 @@ containing a value of this type.
         public static final int notification_bg_normal=0x7f02008b;
         public static final int notification_bg_normal_pressed=0x7f02008c;
         public static final int notification_icon_background=0x7f02008d;
-        public static final int notification_template_icon_bg=0x7f02009e;
-        public static final int notification_template_icon_low_bg=0x7f02009f;
+        public static final int notification_template_icon_bg=0x7f02009f;
+        public static final int notification_template_icon_low_bg=0x7f0200a0;
         public static final int notification_tile_bg=0x7f02008e;
         public static final int notify_panel_notification_icon_bg=0x7f02008f;
         public static final int people=0x7f020090;
@@ -3339,10 +3339,11 @@ containing a value of this type.
         public static final int plusicon=0x7f020097;
         public static final int pubtrans_ic_mylocation_off=0x7f020098;
         public static final int pubtrans_ic_mylocation_on=0x7f020099;
-        public static final int selector_btn_navermap_bg=0x7f02009a;
-        public static final int switch_camera=0x7f02009b;
-        public static final int title=0x7f02009c;
-        public static final int user=0x7f02009d;
+        public static final int sample_background=0x7f02009a;
+        public static final int selector_btn_navermap_bg=0x7f02009b;
+        public static final int switch_camera=0x7f02009c;
+        public static final int title=0x7f02009d;
+        public static final int user=0x7f02009e;
     }
     public static final class id {
         public static final int Btn_AddSpot_Image=0x7f0e0096;
@@ -3377,9 +3378,9 @@ containing a value of this type.
         public static final int basic=0x7f0e0015;
         public static final int beginning=0x7f0e0053;
         public static final int bottom=0x7f0e0042;
-        public static final int btnLandscape=0x7f0e00a5;
+        public static final int btnLandscape=0x7f0e00a4;
         public static final int btnPeople=0x7f0e00a3;
-        public static final int btnPhotospot=0x7f0e00a4;
+        public static final int btnPhotospot=0x7f0e00a5;
         public static final int btnSend=0x7f0e00cc;
         public static final int btn_AddSpot_Search=0x7f0e009a;
         public static final int btn_MapSearch=0x7f0e00c5;
@@ -3664,8 +3665,9 @@ containing a value of this type.
         public static final int select_dialog_item_material=0x7f040047;
         public static final int select_dialog_multichoice_material=0x7f040048;
         public static final int select_dialog_singlechoice_material=0x7f040049;
-        public static final int support_simple_spinner_dropdown_item=0x7f04004a;
-        public static final int texture_view=0x7f04004b;
+        public static final int splash=0x7f04004a;
+        public static final int support_simple_spinner_dropdown_item=0x7f04004b;
+        public static final int texture_view=0x7f04004c;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;

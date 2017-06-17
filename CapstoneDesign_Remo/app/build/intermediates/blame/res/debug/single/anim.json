@@ -4,12 +4,12 @@
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\37f15e9be4da89808b0561111df80f27bdc50d6b\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
