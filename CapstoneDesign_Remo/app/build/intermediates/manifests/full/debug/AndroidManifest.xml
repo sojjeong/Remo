@@ -101,6 +101,9 @@
             android:name="com.imaginarywings.capstonedesign.remo.LocalSearchActivity"
             android:label="LocalSearchActivity" />
         <activity
+            android:name="com.imaginarywings.capstonedesign.remo.navermap.MyPhotospotActivity"
+            android:label="MyPhotospotActivity" />
+        <activity
             android:name="com.gun0912.tedpermission.TedPermissionActivity"
             android:theme="@style/Theme.Transparent" />
 

@@ -231,6 +231,14 @@ public class FragmentMapActivity extends FragmentActivity {
 
                     break;
                 }
+
+                case R.id.fab_myspot :
+                {
+                    //Toast.makeText(FragmentMapActivity.this, "포토스팟 등록창", Toast.LENGTH_SHORT).show();
+                    Intent intent_myspot = new Intent(getApplicationContext(), MyPhotospotActivity.class);
+                    startActivity(intent_myspot);
+                    break;
+                }
             }
         }
     };

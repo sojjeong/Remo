@@ -86,6 +86,14 @@
             android:name=".LocalSearchActivity"
             android:label="LocalSearchActivity" />
 
+        <activity
+            android:name=".navermap.MyPhotospotActivity"
+            android:label="MyPhotospotActivity" />
+
+        <activity
+            android:name=".TutorialActivity"
+            android:label="TutorialActivity" />
+
     </application>
 
 </manifest>

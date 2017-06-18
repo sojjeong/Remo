@@ -1,6 +1,7 @@
 package com.imaginarywings.capstonedesign.remo;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btnMovePeople;
     ImageButton btnMoveLandscape;
     ImageButton btnMovePhotospot;
+    ImageButton btnMoveTutorial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnMovePeople = (ImageButton) findViewById(R.id.btnPeople);
         btnMoveLandscape = (ImageButton) findViewById(R.id.btnLandscape);
         btnMovePhotospot = (ImageButton) findViewById(R.id.btnPhotospot);
+        btnMoveTutorial = (ImageButton) findViewById(R.id.btnTutorial);
 
         btnMovePeople.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent photospotIntent = new Intent(getApplicationContext(), FragmentMapActivity.class);
                 startActivity(photospotIntent);
+            }
+        });
+
+        btnMoveTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tutorialIntent = new Intent(getApplicationContext(), TutorialActivity.class);
+                startActivity(tutorialIntent);
             }
         });
     }
