@@ -72,11 +72,11 @@ public class AddSpotActivity extends AppCompatActivity {
     @BindView(R.id.id_editTextAddressSearch)
     EditText mEditText_AddressSearch;
     @BindView(R.id.Btn_AddSpot_Image)
-    ImageButton mbtnAddSpotImage;
+    Button mbtnAddSpotImage;
     @BindView(R.id.id_ImgView_PhotoSpot)
     ImageView mPhotospotImage;
     @BindView(R.id.id_imgbtnSaveSpot)
-    ImageButton mSaveSpot;
+    Button mSaveSpot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

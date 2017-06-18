@@ -7,29 +7,33 @@
     tools:context="com.imaginarywings.capstonedesign.remo.navermap.AddSpotActivity"
     android:background="@drawable/background_photospot">
 
-    <ImageButton
+    <Button
         android:id="@+id/Btn_AddSpot_Image"
+        android:background="#0B423D"
+        android:text="사진추가"
+        android:textColor="#FFFFFF"
         android:layout_width="140dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:layout_constraintVertical_bias="0.888"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/id_imgbtnSaveSpot"
+        android:background="#0B423D"
+        android:text="포토스팟 등록"
+        android:textColor="#FFFFFF"
         android:layout_width="140dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893"
-        app:srcCompat="@android:drawable/ic_menu_save" />
+        app:layout_constraintVertical_bias="0.889" />
 
 
     <ImageView
@@ -48,11 +52,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49"
+        app:layout_constraintVertical_bias="0.618"
         app:srcCompat="@color/common_google_signin_btn_text_dark_pressed" />
 
     <TextView
         android:id="@+id/id_SpotAddress"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:gravity="center"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginBottom="8dp"
@@ -67,7 +74,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintVertical_bias="0.268" />
 
     <Button
         android:id="@+id/btn_AddSpot_Search"
@@ -101,12 +108,13 @@
         android:paddingLeft="7dp"
         android:paddingRight="30dp"
         android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.177" />
 
 
 </android.support.constraint.ConstraintLayout>
