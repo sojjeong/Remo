@@ -168,7 +168,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
     private final ResourceIdsOnMap mResourceIdsForMarkerOnMap[] = {
             // Spot, Pin icons
             new ResourceIdsOnMap(NMapPOIflagType.PIN, R.drawable.photospot_main, R.drawable.photospot_main),
-            new ResourceIdsOnMap(NMapPOIflagType.SPOT, R.drawable.photospot_user, R.drawable.photospot_user),
+            new ResourceIdsOnMap(NMapPOIflagType.SPOT, R.drawable.center_marker, R.drawable.center_marker),
     };
 
     /**
@@ -300,7 +300,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
         Drawable drawable = null;
 
         if (markerId >= NMapPOIflagType.NUMBER_BASE && markerId < NMapPOIflagType.NUMBER_END) { // Direction Number icons
-            int resourceId = (focused) ? R.drawable.photospot_main : R.drawable.photospot_user;
+            int resourceId = (focused) ? R.drawable.photospot_main : R.drawable.center_marker;
             int fontColor = (focused) ? POI_FONT_COLOR_ALPHABET : POI_FONT_COLOR_NUMBER;
 
             String strNumber = String.valueOf(markerId - NMapPOIflagType.NUMBER_BASE);

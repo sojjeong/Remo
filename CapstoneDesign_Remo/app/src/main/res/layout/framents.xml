@@ -74,25 +74,28 @@
 
 	<EditText
 		android:id="@+id/id_SpotSearch"
-		android:layout_width="match_parent"
-		android:layout_height="50dp"
-		android:layout_alignParentStart="true"
+		android:layout_width="400dp"
+		android:layout_height="40dp"
 		android:layout_alignParentTop="true"
-		android:background="@android:drawable/dialog_holo_light_frame"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="7dp"
+		android:background="@drawable/serachbar_photospot"
 		android:clickable="true"
 		android:hint="주소를 입력하세요."
 		android:iconifiedByDefault="false"
-		android:inputType="text">
+		android:inputType="text"
+		android:paddingLeft="8dp"
+		android:paddingRight="52dp">
 
 	</EditText>
 
 	<Button
 		android:id="@+id/btn_MapSearch"
-		android:layout_width="40dp"
-		android:layout_height="45dp"
-		android:layout_alignBaseline="@+id/id_SpotSearch"
+		android:layout_width="34dp"
+		android:layout_height="34dp"
 		android:layout_alignBottom="@+id/id_SpotSearch"
 		android:layout_alignEnd="@+id/fab_mylocation"
-		android:background="@android:drawable/ic_menu_search" />
+		android:background="@drawable/search"
+		android:elevation="0dp" />
 
 </RelativeLayout>
