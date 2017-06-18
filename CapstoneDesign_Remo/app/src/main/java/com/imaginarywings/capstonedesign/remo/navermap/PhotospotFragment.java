@@ -13,12 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.imaginarywings.capstonedesign.remo.Consts;
 import com.imaginarywings.capstonedesign.remo.R;
 import com.imaginarywings.capstonedesign.remo.SpotDetailDialog;
 import com.imaginarywings.capstonedesign.remo.model.PhotoSpotModel;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 import com.nhn.android.maps.NMapActivity;
 import com.nhn.android.maps.NMapCompassManager;
 import com.nhn.android.maps.NMapContext;
@@ -38,6 +41,8 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import io.nlopez.smartlocation.SmartLocation;
+
+import static com.imaginarywings.capstonedesign.remo.Consts.API_URL;
 
 /**
  * NMapFragment extends Fragment
@@ -154,6 +159,9 @@ public class PhotospotFragment extends NMapFragment {
 		mMapContext.setMapDataProviderListener(onDataProviderListener);
 
 		createSpotMarker();
+
+		createSpotMakerFromDB();
+
 	}
 
 	@Override
@@ -289,10 +297,6 @@ public class PhotospotFragment extends NMapFragment {
 				mMapController.animateTo(myLocation);
 			}
 
-			//위치 로그 확인
-			Log.d("myLog", "my Location latitude " + myLocation.getLatitude());
-			Log.d("myLog", "my Location Longitude " + myLocation.getLongitude());
-
 			//위도 경도를 주소로 변환
 			mMapContext.findPlacemarkAtLocation(myLocation.getLongitude(), myLocation.getLatitude());
 
@@ -417,6 +421,22 @@ public class PhotospotFragment extends NMapFragment {
 		});
 
 		mOverlayManager.addOverlay(poiDataOverlay);
+	}
+
+	/**
+	 * 데이터베이스에 있는 포토스팟 정보를 불러와 포토스팟 생성
+	 */
+	public void createSpotMakerFromDB()
+	{
+		Ion.with(this)
+				.load (API_URL + "/spot")
+				.asJsonObject()
+				.setCallback(new FutureCallback<JsonObject>() {
+					@Override
+					public void onCompleted(Exception e, JsonObject result) {
+						Log.e(TAG, result.toString());
+					}
+				});
 	}
 
 	//시작했을때 나의 현재 위치 보여주록 함.
