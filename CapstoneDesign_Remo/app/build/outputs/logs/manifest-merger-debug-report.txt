@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:2:1-91:12
+ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:2:1-95:12
 	package
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:4:5-53
 		INJECTED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml
@@ -70,7 +70,7 @@ ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:34:22-72
 application
-ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:36:5-89:19
+ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:36:5-93:19
 MERGED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\58e32b255faf2852e041ee09d95a6ec83a9aae6c\output\AndroidManifest.xml:9:5-20
 MERGED from [com.naver.maps.open:naver-map-api:2.1.2] C:\Users\Administrator\.android\build-cache\92edcd0215c0eacd0e1e0757d751a7a33bb36757\output\AndroidManifest.xml:11:5-14:19
@@ -177,6 +177,12 @@ ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:87:13-48
 	android:name
 		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:86:13-48
+activity#com.imaginarywings.capstonedesign.remo.navermap.MyPhotospotActivity
+ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:89:9-91:51
+	android:label
+		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:91:13-48
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml:90:13-57
 uses-sdk
 INJECTED from C:\Users\Administrator\Desktop\CapstoneDesign\CapstoneDesign_Remo\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.flurgle:camerakit:0.9.17] C:\Users\Administrator\.android\build-cache\d5544f809f3c6172049850cce90c2bd65d2047f4\output\AndroidManifest.xml:7:5-9:41

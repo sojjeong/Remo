@@ -52,36 +52,36 @@
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
-        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\f860c9033aa33284bf3862722ad66d0b8a8c65cc\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
-        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\f860c9033aa33284bf3862722ad66d0b8a8c65cc\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_circkle_x.png",
         "source": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\drawable\\ic_circkle_x.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1b20a0caa143a206aaf2d0cf0e5ea78a1e6faa51\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\focus_marker_outline.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\d5544f809f3c6172049850cce90c2bd65d2047f4\\output\\res\\drawable\\focus_marker_outline.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d0c5b3882a4793b1a1bd8a659fdd875695ea7f58\\output\\res\\drawable\\design_password_eye.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1b20a0caa143a206aaf2d0cf0e5ea78a1e6faa51\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_normal.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\1b20a0caa143a206aaf2d0cf0e5ea78a1e6faa51\\output\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\d0c5b3882a4793b1a1bd8a659fdd875695ea7f58\\output\\res\\drawable\\design_password_eye.xml"
     },
     {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
@@ -92,12 +92,12 @@
         "source": "C:\\Users\\default.DESKTOP-D2HJFCT\\.android\\build-cache\\169227604807edc67319125cfb11f0b32002af01\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\user.png",
-        "source": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\src\\main\\res\\drawable\\user.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\user.png",
+        "source": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\src\\main\\res\\drawable\\user.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
@@ -642,6 +642,10 @@
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e1b7ef16746daff768e1eb2a05154b7f0ea91db\\output\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tutorial.png",
+        "source": "C:\\Users\\Administrator\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\src\\main\\res\\drawable\\tutorial.png"
     },
     {
         "merged": "D:\\AndroidWorkspace\\Capstone\\CapstoneDesign_Remo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_green_normal.9.png",
