@@ -3,7 +3,7 @@
     package="com.imaginarywings.capstonedesign.remo.test" >
 
     <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="23"
         android:targetSdkVersion="23" />
 
     <instrumentation

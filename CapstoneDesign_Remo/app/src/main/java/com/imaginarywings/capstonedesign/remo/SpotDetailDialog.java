@@ -28,7 +28,6 @@ import butterknife.OnClick;
 public class SpotDetailDialog extends DialogFragment {
     @BindView(R.id.detail_image) ImageView mImage;
     @BindView(R.id.detail_address_text) TextView mAdressText;
-    @BindView(R.id.detail_subject_text) TextView mSubjectText;
 
     private PhotoSpotModel mSpotModel;
 
@@ -60,7 +59,7 @@ public class SpotDetailDialog extends DialogFragment {
 
         //Set the width of the dialog proportional to 75% of the screen width
         //window.setLayout((int)(size.x * 0.8), (int)(size.y * 0.8));
-        window.setLayout((int)(size.x * 0.8), (int)(size.y * 0.6));
+        window.setLayout((int)(size.x * 0.95), (int)(size.y * 0.8));
         window.setGravity(Gravity.CENTER);
 
         //Call super onResume after sizing
@@ -74,11 +73,11 @@ public class SpotDetailDialog extends DialogFragment {
         ButterKnife.bind(this, rootView);
 
         mAdressText.setText(mSpotModel.getAddress());
-        //mSubjectText.setText(mSpotModel.getSubject());
 
         Glide.with(this)
                 .load(mSpotModel.getImgSrc())
                 .thumbnail(0.1f)
+                .fitCenter()
                 .into(mImage);
 
         setCancelable(false);
