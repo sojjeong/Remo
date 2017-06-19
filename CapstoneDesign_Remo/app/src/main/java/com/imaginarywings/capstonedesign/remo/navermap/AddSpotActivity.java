@@ -99,10 +99,12 @@ public class AddSpotActivity extends AppCompatActivity {
             //포토스팟 위도 경도 삽입
             mSavePoint = ((FragmentMapActivity) FragmentMapActivity.mContext).getAddress();
 
-            String Address =
-                    ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertAddress(this, mSavePoint.getLatitude(), mSavePoint.getLongitude());
+            if(mSavePoint != null) {
+                String Address =
+                        ((FragmentMapActivity) FragmentMapActivity.mContext).ConvertAddress(this, mSavePoint.getLatitude(), mSavePoint.getLongitude());
 
-            mtext_SpotAddress.setText(Address);
+                mtext_SpotAddress.setText(Address);
+            }
 
         } else {
 
