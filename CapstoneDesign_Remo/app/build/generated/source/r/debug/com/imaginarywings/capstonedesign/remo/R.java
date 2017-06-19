@@ -3261,13 +3261,13 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020051;
         public static final int abc_vector_test=0x7f020052;
         public static final int avd_hide_password=0x7f020053;
-        public static final int avd_hide_password_1=0x7f0200ab;
-        public static final int avd_hide_password_2=0x7f0200ac;
-        public static final int avd_hide_password_3=0x7f0200ad;
+        public static final int avd_hide_password_1=0x7f0200ae;
+        public static final int avd_hide_password_2=0x7f0200af;
+        public static final int avd_hide_password_3=0x7f0200b0;
         public static final int avd_show_password=0x7f020054;
-        public static final int avd_show_password_1=0x7f0200ae;
-        public static final int avd_show_password_2=0x7f0200af;
-        public static final int avd_show_password_3=0x7f0200b0;
+        public static final int avd_show_password_1=0x7f0200b1;
+        public static final int avd_show_password_2=0x7f0200b2;
+        public static final int avd_show_password_3=0x7f0200b3;
         public static final int background=0x7f020055;
         public static final int background_dialog=0x7f020056;
         public static final int background_landscape=0x7f020057;
@@ -3331,8 +3331,8 @@ containing a value of this type.
         public static final int notification_bg_normal=0x7f020091;
         public static final int notification_bg_normal_pressed=0x7f020092;
         public static final int notification_icon_background=0x7f020093;
-        public static final int notification_template_icon_bg=0x7f0200a9;
-        public static final int notification_template_icon_low_bg=0x7f0200aa;
+        public static final int notification_template_icon_bg=0x7f0200ac;
+        public static final int notification_template_icon_low_bg=0x7f0200ad;
         public static final int notification_tile_bg=0x7f020094;
         public static final int notify_panel_notification_icon_bg=0x7f020095;
         public static final int people=0x7f020096;
@@ -3353,7 +3353,10 @@ containing a value of this type.
         public static final int switch_camera=0x7f0200a5;
         public static final int title=0x7f0200a6;
         public static final int tutorial=0x7f0200a7;
-        public static final int user=0x7f0200a8;
+        public static final int tutorial_camera=0x7f0200a8;
+        public static final int tutorial_cover=0x7f0200a9;
+        public static final int tutorial_photospot=0x7f0200aa;
+        public static final int user=0x7f0200ab;
     }
     public static final class id {
         public static final int Btn_AddSpot_Image=0x7f0e0094;
@@ -3677,7 +3680,8 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f04004b;
         public static final int texture_view=0x7f04004c;
         public static final int tutorial_camera=0x7f04004d;
-        public static final int tutorial_photospot=0x7f04004e;
+        public static final int tutorial_cover=0x7f04004e;
+        public static final int tutorial_photospot=0x7f04004f;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -3740,20 +3744,21 @@ containing a value of this type.
         public static final int common_open_on_phone=0x7f080021;
         public static final int common_signin_button_text=0x7f080022;
         public static final int common_signin_button_text_long=0x7f080023;
-        public static final int password_toggle_content_description=0x7f08003a;
-        public static final int path_password_eye=0x7f08003b;
-        public static final int path_password_eye_mask_strike_through=0x7f08003c;
-        public static final int path_password_eye_mask_visible=0x7f08003d;
-        public static final int path_password_strike_through=0x7f08003e;
-        public static final int photospot=0x7f08003f;
+        public static final int cover=0x7f08003a;
+        public static final int password_toggle_content_description=0x7f08003b;
+        public static final int path_password_eye=0x7f08003c;
+        public static final int path_password_eye_mask_strike_through=0x7f08003d;
+        public static final int path_password_eye_mask_visible=0x7f08003e;
+        public static final int path_password_strike_through=0x7f08003f;
+        public static final int photospot=0x7f080040;
         public static final int search_menu_title=0x7f080024;
         public static final int status_bar_notification_info_overflow=0x7f080025;
         public static final int tedpermission_close=0x7f080026;
         public static final int tedpermission_confirm=0x7f080027;
         public static final int tedpermission_setting=0x7f080028;
-        public static final int title_activity_add_spot=0x7f080040;
-        public static final int title_activity_photospot2=0x7f080041;
-        public static final int title_activity_photospot_fragment=0x7f080042;
+        public static final int title_activity_add_spot=0x7f080041;
+        public static final int title_activity_photospot2=0x7f080042;
+        public static final int title_activity_photospot_fragment=0x7f080043;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0a00a1;

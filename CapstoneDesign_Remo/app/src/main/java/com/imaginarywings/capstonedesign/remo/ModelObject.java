@@ -2,6 +2,7 @@ package com.imaginarywings.capstonedesign.remo;
 
 public enum ModelObject {
 
+    COVER(R.string.cover, R.layout.tutorial_cover),
     CAMERA(R.string.camera, R.layout.tutorial_camera),
     PHOTOSPOT(R.string.photospot, R.layout.tutorial_photospot);
 
