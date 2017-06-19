@@ -451,10 +451,6 @@ public class PhotospotFragment extends NMapFragment {
 							String spot_address = object.get("spot_address").getAsString();
 							String user_uuid = object.get("user_uuid").getAsString();
 
-							//결과값이 ""이름"" 이런식으로 쌍따옴표까지 포함해서 스트링으로 인식. 이걸 잘라내야함
-
-							Log.e(TAG, spot_url);
-
 							int id = Integer.valueOf(spot_id).intValue();
 							double latitude = Double.valueOf(spot_latitude).doubleValue();
 							double longitude = Double.valueOf(spot_longitude).doubleValue();
