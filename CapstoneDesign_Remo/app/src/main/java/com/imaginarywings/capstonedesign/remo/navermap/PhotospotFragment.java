@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -38,11 +40,13 @@ import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
 import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import io.nlopez.smartlocation.SmartLocation;
 
 import static com.imaginarywings.capstonedesign.remo.Consts.API_URL;
+import static com.koushikdutta.async.http.Protocol.get;
 
 /**
  * NMapFragment extends Fragment
@@ -158,7 +162,7 @@ public class PhotospotFragment extends NMapFragment {
 		// 데이터 제공 리스너 제대로 동작하는지 확인해야함
 		mMapContext.setMapDataProviderListener(onDataProviderListener);
 
-		createSpotMarker();
+		//createSpotMarker();
 
 		createSpotMakerFromDB();
 
@@ -429,12 +433,35 @@ public class PhotospotFragment extends NMapFragment {
 	public void createSpotMakerFromDB()
 	{
 		Ion.with(this)
-				.load (API_URL + "/spot")
+				.load (API_URL + "/spots")
 				.asJsonObject()
 				.setCallback(new FutureCallback<JsonObject>() {
 					@Override
 					public void onCompleted(Exception e, JsonObject result) {
-						Log.e(TAG, result.toString());
+						JsonArray array = result.get("data").getAsJsonArray();
+
+						for(int i = 0; i < array.size(); ++i)
+						{
+							JsonObject object = (JsonObject)array.get(i);
+
+							String spot_url = API_URL+ "/" + object.get("spot_image_url").getAsString();
+							String spot_id = object.get("spot_id").getAsString();
+							String spot_latitude = object.get("spot_latitude").getAsString();
+							String spot_longitude = object.get("spot_longitude").getAsString();
+							String spot_address = object.get("spot_address").getAsString();
+							String user_uuid = object.get("user_uuid").getAsString();
+
+							//결과값이 ""이름"" 이런식으로 쌍따옴표까지 포함해서 스트링으로 인식. 이걸 잘라내야함
+
+							Log.e(TAG, spot_url);
+
+							int id = Integer.valueOf(spot_id).intValue();
+							double latitude = Double.valueOf(spot_latitude).doubleValue();
+							double longitude = Double.valueOf(spot_longitude).doubleValue();
+
+							PhotoSpotModel model = new PhotoSpotModel(id, "type", user_uuid, "subject", spot_address, spot_url, latitude, longitude);
+							createSpotMarker(model);
+						}
 					}
 				});
 	}

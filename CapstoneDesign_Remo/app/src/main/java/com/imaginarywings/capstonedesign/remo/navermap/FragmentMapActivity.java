@@ -16,6 +16,7 @@
 package com.imaginarywings.capstonedesign.remo.navermap;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
@@ -33,10 +34,13 @@ import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.imaginarywings.capstonedesign.remo.R;
 import com.nhn.android.maps.maplib.NGeoPoint;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -67,7 +71,7 @@ public class FragmentMapActivity extends FragmentActivity {
     public double latitude;     //위도
     public double longitude;    //경도
 
-    static String mUUID; //UUID
+    public static String mUUID; //UUID
 
     //포토스팟 검색 SearchView
     @BindView(R.id.id_SpotSearch) EditText mSearchView;
@@ -109,7 +113,9 @@ public class FragmentMapActivity extends FragmentActivity {
         fabMySpot.setOnClickListener(clickListener);
         fabMylocation.setOnClickListener(clickListener);
 
-        mUUID = GetDevicesUUID(this);
+        checkUUIDPermissions();
+
+        //mUUID = GetDevicesUUID(this);
     }
 
     @Override
@@ -320,4 +326,24 @@ public class FragmentMapActivity extends FragmentActivity {
         return deviceId;
     }
 
+    //퍼미션 리스터 인터페이스 오버라이드
+    PermissionListener permissionlistener = new PermissionListener() {
+        @Override
+        public void onPermissionGranted() {
+            mUUID = GetDevicesUUID(mContext);
+        }
+
+        @Override
+        public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+            Toast.makeText(mContext,"권한이 허용되지 않아서 앱을 이용할 수 없습니다.", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private void checkUUIDPermissions() {
+        new TedPermission(mContext)
+                .setPermissionListener(permissionlistener)
+                .setDeniedMessage("요청을 거절하면 해당 서비스를 이용할 수 없습니다.\n\n 환경설정에서 권한요청을 허용해 주십시오.")
+                .setPermissions(Manifest.permission.READ_PHONE_STATE)
+                .check();
+    }
 }
