@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -40,13 +39,11 @@ import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
 import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.ButterKnife;
 import io.nlopez.smartlocation.SmartLocation;
 
 import static com.imaginarywings.capstonedesign.remo.Consts.API_URL;
-import static com.koushikdutta.async.http.Protocol.get;
 
 /**
  * NMapFragment extends Fragment
@@ -161,8 +158,6 @@ public class PhotospotFragment extends NMapFragment {
 
 		// 데이터 제공 리스너 제대로 동작하는지 확인해야함
 		mMapContext.setMapDataProviderListener(onDataProviderListener);
-
-		//createSpotMarker();
 
 		createSpotMakerFromDB();
 

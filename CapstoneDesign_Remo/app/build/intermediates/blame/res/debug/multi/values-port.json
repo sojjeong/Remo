@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\user\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+        "outputFile": "C:\\Users\\tip90\\Desktop\\CapstoneDesign\\CapstoneDesign_Remo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "C:\\Users\\user\\.android\\build-cache\\0707693ee4062842fd42d8bb7f949d5097e2b5dc\\output\\res\\values-port\\values-port.xml",
+                    "file": "C:\\Users\\tip90\\.android\\build-cache\\5530013141fc556eaf7f8c94c42e603a26c41030\\output\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

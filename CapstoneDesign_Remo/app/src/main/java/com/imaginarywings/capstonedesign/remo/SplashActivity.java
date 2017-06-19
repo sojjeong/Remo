@@ -14,7 +14,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
 
-        new Handler().postDelayed(new Runnable() {
+           new Handler().postDelayed(new Runnable() {
 
             @Override
             public void run() {
