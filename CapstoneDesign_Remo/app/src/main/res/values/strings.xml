@@ -5,4 +5,5 @@
     <string name="title_activity_add_spot">AddSpotActivity</string>
     <string name="camera">CameraTutorial</string>
     <string name="photospot">PhotospotTutorial</string>
+    <string name="cover">TutorialCover</string>
 </resources>
