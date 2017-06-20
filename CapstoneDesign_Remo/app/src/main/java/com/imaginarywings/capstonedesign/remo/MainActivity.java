@@ -1,7 +1,6 @@
 package com.imaginarywings.capstonedesign.remo;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;

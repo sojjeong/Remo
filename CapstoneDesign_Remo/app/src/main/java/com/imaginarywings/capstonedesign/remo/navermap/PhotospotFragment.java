@@ -38,9 +38,6 @@ import com.nhn.android.mapviewer.overlay.NMapMyLocationOverlay;
 import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
 import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -86,11 +83,6 @@ public class PhotospotFragment extends NMapFragment {
 	public NMapContext mMapContext;
 
 	public static Context mContext;
-
-	public PhotospotFragment()
-	{
-
-	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -436,27 +428,33 @@ public class PhotospotFragment extends NMapFragment {
 				.setCallback(new FutureCallback<JsonObject>() {
 					@Override
 					public void onCompleted(Exception e, JsonObject result) {
-						JsonArray array = result.get("data").getAsJsonArray();
 
-						for(int i = 0; i < array.size(); ++i)
-						{
-							JsonObject object = (JsonObject)array.get(i);
+						if (e != null) {
+							Toast.makeText(mContext, "포토스팟 목록을 가져올 수 없습니다.", Toast.LENGTH_SHORT).show();
+						} else {
+							if (!result.get("code").toString().equals("404")) {
+								JsonArray array = result.get("data").getAsJsonArray();
 
-							String spot_url = API_URL+ "/" + object.get("spot_image_url").getAsString();
-							String spot_id = object.get("spot_id").getAsString();
-							String spot_latitude = object.get("spot_latitude").getAsString();
-							String spot_longitude = object.get("spot_longitude").getAsString();
-							String spot_address = object.get("spot_address").getAsString();
-							String user_uuid = object.get("user_uuid").getAsString();
+								for (int i = 0; i < array.size(); ++i) {
+									JsonObject object = (JsonObject) array.get(i);
 
-							int id = Integer.valueOf(spot_id).intValue();
-							double latitude = Double.valueOf(spot_latitude).doubleValue();
-							double longitude = Double.valueOf(spot_longitude).doubleValue();
+									String spot_url = API_URL + "/" + object.get("spot_image_url").getAsString();
+									String spot_id = object.get("spot_id").getAsString();
+									String spot_latitude = object.get("spot_latitude").getAsString();
+									String spot_longitude = object.get("spot_longitude").getAsString();
+									String spot_address = object.get("spot_address").getAsString();
+									String user_uuid = object.get("user_uuid").getAsString();
 
-							PhotoSpotModel model = new PhotoSpotModel(id, "type", user_uuid, "subject", spot_address, spot_url, latitude, longitude);
-							createSpotMarker(model);
+									int id = Integer.valueOf(spot_id).intValue();
+									double latitude = Double.valueOf(spot_latitude).doubleValue();
+									double longitude = Double.valueOf(spot_longitude).doubleValue();
+
+									PhotoSpotModel model = new PhotoSpotModel(id, "type", user_uuid, "subject", spot_address, spot_url, latitude, longitude);
+									createSpotMarker(model);
+								}
+
+							}
 						}
-
 					}
 				});
 	}
@@ -514,7 +512,9 @@ public class PhotospotFragment extends NMapFragment {
 		new TedPermission(getActivity())
 				.setPermissionListener(permissionlistener)
 				.setDeniedMessage("요청을 거절하면 해당 서비스를 이용할 수 없습니다.\n\n 환경설정에서 권한요청을 허용해 주십시오.")
-				.setPermissions(Manifest.permission.ACCESS_FINE_LOCATION)
+				.setPermissions(Manifest.permission.ACCESS_FINE_LOCATION,
+						Manifest.permission.WRITE_EXTERNAL_STORAGE,
+						Manifest.permission.READ_EXTERNAL_STORAGE)
 				.check();
 	}
 

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -16,10 +15,7 @@ import com.nhn.android.maps.NMapController;
 import com.nhn.android.maps.NMapView;
 import com.nhn.android.maps.maplib.NGeoPoint;
 import com.nhn.android.maps.nmapmodel.NMapError;
-import com.nhn.android.maps.overlay.NMapPOIdata;
-import com.nhn.android.maps.overlay.NMapPOIitem;
 import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
-import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
 import butterknife.ButterKnife;
 
@@ -32,8 +28,6 @@ public class AddSpotFragment extends NMapFragment {
 
     //네이버맵 클라이언트 아이디(API키)
     private final String CLIENT_ID = "xQ50GyWn_EU3eQE4A1sL";
-    private static final boolean DEBUG = false;
-    private static final String LOG_TAG = "AddSpotFragment";
 
     //현재 클래스명 얻어오기
     private final String TAG = getClass().getSimpleName();
@@ -179,7 +173,6 @@ public class AddSpotFragment extends NMapFragment {
             Log.d(TAG, Latitude);
             Log.d(TAG, Longitude);
             Log.d(TAG, mStringCenterAddress);
-
 
             //지도 센터의 값을 주소로 변환하여 AddSpotFragmentActivity의 주소를 담는 텍스트뷰를 계속 갱신시킨다.
             ((AddSpotFragmentActivity) AddSpotFragmentActivity.mContext).text_CenterAddress.setText(mStringCenterAddress);

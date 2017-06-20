@@ -28,9 +28,12 @@ import static com.imaginarywings.capstonedesign.remo.navermap.MyPhotospotActivit
 public class MySpotAdapter extends BaseAdapter {
     private final String TAG = getClass().getSimpleName();
 
-    private Context mContext;
+    public static Context mContext;
     // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
     private List<PhotoSpotModel> listViewItemList = new ArrayList<>();
+
+    public TextView addressTv;
+    public TextView datetimeTv;
 
     // ListViewAdapter의 생성자
     public MySpotAdapter(Context context) {
@@ -57,8 +60,8 @@ public class MySpotAdapter extends BaseAdapter {
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         LinearLayout layout = (LinearLayout) convertView.findViewById(R.id.my_spot_layout);
-        TextView addressTv = (TextView) convertView.findViewById(R.id.my_spot_address_tv);
-        TextView datetimeTv = (TextView) convertView.findViewById(R.id.my_spot_datetime_tv);
+        addressTv = (TextView) convertView.findViewById(R.id.my_spot_address_tv);
+        datetimeTv = (TextView) convertView.findViewById(R.id.my_spot_datetime_tv);
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
         final PhotoSpotModel listViewItem = listViewItemList.get(position);

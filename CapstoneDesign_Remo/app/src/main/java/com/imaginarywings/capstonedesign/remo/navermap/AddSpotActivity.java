@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.location.LocationManager;
-import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,12 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.gson.JsonObject;
 import com.imaginarywings.capstonedesign.remo.R;
 import com.imaginarywings.capstonedesign.remo.model.PhotoSpotModel;
@@ -41,13 +38,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import jp.wasabeef.glide.transformations.CropTransformation;
 
 import static com.imaginarywings.capstonedesign.remo.Consts.API_URL;
 
 public class AddSpotActivity extends AppCompatActivity {
 
-    private final int REQUEST_SELECT_PHOTO = 1004;
     private final int REQUEST_SPOT_SEARCH = 1005;
 
     private static final int PICK_FROM_ALBUM = 1;
