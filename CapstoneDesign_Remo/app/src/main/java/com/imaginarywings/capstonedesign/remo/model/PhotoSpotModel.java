@@ -22,6 +22,8 @@ public class PhotoSpotModel implements Parcelable{
     private double latitude;    //위도
     private double longitude;   //경도
 
+    private String dateTime;    //등록 날짜
+
     //생성자
     public PhotoSpotModel(int id, String type, String aid, String subject, String address, String imgSrc, double latitude, double longitude)
     {
@@ -68,6 +70,9 @@ public class PhotoSpotModel implements Parcelable{
     public double getLongitude() {
         return longitude;
     }
+
+    public void setDateTime(String date) { dateTime = date; }
+    public String getDateTime() { return dateTime; }
 
     @Override
     public String toString() {

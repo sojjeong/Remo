@@ -38,6 +38,9 @@ import com.nhn.android.mapviewer.overlay.NMapMyLocationOverlay;
 import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
 import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -453,6 +456,7 @@ public class PhotospotFragment extends NMapFragment {
 							PhotoSpotModel model = new PhotoSpotModel(id, "type", user_uuid, "subject", spot_address, spot_url, latitude, longitude);
 							createSpotMarker(model);
 						}
+
 					}
 				});
 	}
